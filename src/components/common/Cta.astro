@@ -1,0 +1,63 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="c-cta">
+  <div class="l-container">
+    <h2 class="c-cta-title-lv2">お問い合わせはこちら</h2>
+    <p class="c-cta-text">ホームページ制作・リニューアルのご相談を承っています。<br>まずは現状のお悩みをお聞かせください。</p>
+    <div class="c-cta-btn">
+      <Button
+        buttonUrl="/contact"
+        buttonText="お問い合わせ"
+        buttonAriaLabel="お問い合わせ・ご相談をする"
+      />
+    </div>
+  </div><!-- /.l-container -->
+</section>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-cta {
+    padding-block: 80px 72px;
+    background-color: var(--color-sub);
+    font-weight: 700;
+  }
+
+  .c-cta-title-lv2 {
+    font-size: 24px;
+    letter-spacing: .03em;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .c-cta-text {
+    width: fit-content;
+    margin-block-start: 32px;
+    margin-inline: auto;
+  }
+
+  .c-cta-btn {
+    margin-block-start: 64px;
+    text-align: center;
+  }
+
+  @include mq() {
+    .c-cta {
+      padding-block: 120px 160px;
+    }
+
+    .c-cta-title-lv2 {
+      font-size: 32px;
+    }
+
+    .c-cta-text {
+      margin-block-start: 40px;
+    }
+
+    .c-cta-btn {
+      margin-block-start: 48px;
+    }
+  }
+</style>

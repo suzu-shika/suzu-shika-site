@@ -1,0 +1,42 @@
+---
+const { buttonUrl, buttonText, buttonAriaLabel, buttonTarget } = Astro.props;
+---
+
+
+<a href={buttonUrl} target={buttonTarget} rel={buttonTarget === "_blank" ? "noopener noreferrer" : undefined} aria-label={buttonAriaLabel} class="c-button">{buttonText}</a>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-button {
+    display: inline-flex;
+    gap: 24px;
+    align-items: center;
+    padding-block: 16px;
+    padding-inline: 40px 32px;
+    border-radius: 100px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.5;
+
+    &::after {
+      content: "";
+      width: 9px;
+      height: 11px;
+      background-color: var(--color-white);
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    }
+  }
+
+  @media (any-hover: hover) {
+    .c-button {
+      transition: filter .5s ease;
+
+      &:hover {
+        filter: brightness(80%) contrast(120%);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,22 @@
+@use 'breakpoints' as *;
+
+.c-list-green-line {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+}
+
+.c-list-green-line-item {
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: .5em;
+
+  &::before {
+    content: "";
+    width: 3px;
+    height: 18px;
+    margin-block-start: 5px;
+    background-color: var(--color-main);
+  }
+}
+

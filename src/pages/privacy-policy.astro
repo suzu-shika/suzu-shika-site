@@ -1,0 +1,175 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageKv from "../components/common/PageKv.astro";
+import BreadCrumb from "../components/common/Breadcrumb.astro";
+import Cta from "../components/common/Cta.astro";
+
+// JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://creative-basbousa-a8451a.netlify.app/#organization",
+  name: "NPO法人 Oita Campus Link",
+  alternateName: "Oita Campus Link",
+  url: "https://creative-basbousa-a8451a.netlify.app/",
+  logo: "https://creative-basbousa-a8451a.netlify.app/assets/images/global/logo.png",
+  image: "https://creative-basbousa-a8451a.netlify.app/ogp.png",
+  description:
+    "鈴鹿Web制作のプライバシーポリシーです。個人情報の取り扱い方針や利用目的、管理方法についてご説明しています。",
+});
+---
+
+<Layout
+  title="プライバシーポリシー｜鈴鹿Web制作"
+  ogType="website"
+  description="鈴鹿Web制作のプライバシーポリシーです。個人情報の取り扱い方針や利用目的、管理方法についてご説明しています。"
+  jsonLd={jsonLd}
+>
+  <main class="privacy">
+    <div class="privacy-kv">
+      <PageKv pageTitle="プライバシーポリシー" />
+    </div>
+    <div class="privacy-content l-container-s">
+      <p class="privacy-lead">当サイトでは、取得した個人情報を適切に管理し、法令に基づき適切に取り扱います。</p>
+      <div class="privacy-list">
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第1条（個人情報の利用目的）</h2>
+          <p class="privacy-text">当サイトでは、お問い合わせフォームのご利用時に、お名前やメールアドレス等の個人情報をご入力いただく場合があります。<br>取得した個人情報は、お問い合わせへの対応および必要なご連絡のために利用し、それ以外の目的では利用いたしません。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第2条（個人情報の第三者提供について）</h2>
+          <p class="privacy-text">取得した個人情報は、法令に基づく場合を除き、本人の同意なく第三者に提供することはありません。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第3条（アクセス解析ツールの利用）</h2>
+          <p class="privacy-text">当サイトでは、利用状況の把握および改善のため、Google Analytics 4（GA4）を利用しています。</p>
+          <p class="privacy-text">Google Analytics 4は、Cookie等の仕組みを利用して、利用者のアクセス情報を収集します。これらの情報は、個人を特定するものではありません。収集された情報は、Google社のプライバシーポリシーに基づいて管理されます。</p>
+          <p class="privacy-text">Google Analytics 4のデータ収集・処理の仕組みについては、以下をご確認ください。<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="privacy-link">https://policies.google.com/privacy<span class="u-visually-hidden">（新しいタブで開きます）</span></a></p>
+          <p class="privacy-text">なお、ブラウザの設定により、Cookieの使用を無効にすることも可能です。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第4条（免責事項）</h2>
+          <p class="privacy-text">当サイトからリンクやバナーなどによって他のサイトへ移動された場合、移動先サイトで提供される情報・サービス等について一切の責任を負いません。</p>
+          <p class="privacy-text">また、当サイトのコンテンツ・情報については、できる限り正確な情報を掲載するよう努めておりますが、その正確性や安全性を保証するものではありません。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第5条（著作権について）</h2>
+          <p class="privacy-text">当サイトに掲載されている文章・画像等の著作物の無断転載を禁止します。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第6条（個人情報保護方針の変更について）</h2>
+          <p class="privacy-text">本ポリシーの内容は、法令の変更や必要に応じて予告なく変更されることがあります。</p>
+        </section>
+        <section class="privacy-item">
+          <h2 class="privacy-title-lv2">第7条（お問い合わせ窓口）</h2>
+          <p class="privacy-text">本ポリシーに関するお問い合わせは、当サイトのお問い合わせフォームよりご連絡ください。</p>
+        </section>
+      </div>
+      <div class="privacy-date">
+        <dl class="privacy-date-list">
+          <div class="privacy-date-item">
+            <dt class="privacy-date-term">制定日</dt>
+            <dd class="privacy-date-description">2026年5月1日</dd>
+          </div>
+          <div class="privacy-date-item">
+            <dt class="privacy-date-term">最終更新日</dt>
+            <dd class="privacy-date-description">2026年5月1日</dd>
+          </div>
+        </dl>
+      </div>
+    </div><!-- /.privacy-content.l-container -->
+
+    <!-- breadcrumb -->
+    <BreadCrumb
+      siteUrl="https://suzu-shika.com"
+      breadcrumbLists={[{ name: "プライバシーポリシー", schemaName: "プライバシーポリシー" }]}
+    />
+  </main>
+
+  <!-- cta -->
+  <Cta />
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .privacy-content {
+    margin-block-start: 64px;
+  }
+
+  .privacy-list {
+    display: grid;
+    gap: 32px;
+    margin-block-start: 32px;
+  }
+
+  .privacy-title-lv2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+
+  .privacy-text {
+    margin-block-start: .5em;
+
+    & + & {
+      margin-block-start: .75em;
+    }
+  }
+
+  .privacy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      width: 18px;
+      height: 16px;
+      background-image: url(/assets/images/global/icon-external-link.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+
+  .privacy-date {
+    margin-block-start: 32px;
+  }
+
+  .privacy-date-item {
+    display: flex;
+  }
+
+  .privacy-date-term {
+    &::after {
+      content: "：";
+    }
+  }
+
+  @include mq() {
+    .privacy-content {
+      margin-block-start: 80px;
+    }
+
+    .privacy-list {
+      gap: 40px;
+      margin-block-start: 40px;
+    }
+
+    .privacy-date {
+      margin-block-start: 40px;
+    }
+  }
+</style>

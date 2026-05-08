@@ -1,0 +1,378 @@
+---
+import Button from "./Button.astro";
+
+const { logo, logoAlt } = Astro.props;
+// const isTopPage = Astro.url.pathname === "/";
+---
+
+<!-- header -->
+<header class="header" id="site-header">
+  <div class="header-container l-container">
+    <p class="header-logo">
+      <a href="/">
+        <img
+          src={logo}
+          alt={logoAlt}
+          loading="eager"
+          decoding="async"
+          width="178"
+          height="24"
+          fetchpriority="high"
+        />
+      </a>
+    </p>
+    <button class="header-hamburger" type="button">
+      <span class="header-hamburger-icon"></span>
+      <span class="header-hamburger-icon"></span>
+      <span class="header-hamburger-icon"></span>
+      <span class="u-visually-hidden">メニュー</span>
+    </button>
+    <div class="header-link">
+      <nav class="header-nav" aria-label="サイトナビゲーション">
+        <ul class="header-nav-list">
+          <li class="header-nav-item header-nav-item--home">
+            <a href="/">ホーム</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="/#works">制作実績</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="/#basic-design">成果につながる基本設計</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="/#faq">よくあるご質問</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="/contact">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a href="/contact" class="header-contact">お問い合わせ</a>
+  </div><!-- /.header-container.l-container -->
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".header-hamburger");
+    const headerLinks = document.querySelector(".header-link");
+    const navLinks = document.querySelectorAll(".header-link a");
+    const body = document.body;
+    const navButtons = document.querySelectorAll(".header-nav-btn");
+    let scrollY = 0; // スクロール位置の保存用
+
+    hamburger.addEventListener("click", function () {
+      const isActive = this.classList.toggle("active");
+      headerLinks.classList.toggle("active");
+
+      if (isActive) {
+        scrollY = window.scrollY;
+        body.style.position = "fixed";
+        body.style.top = `-${scrollY}px`;
+        body.style.left = "0";
+        body.style.right = "0";
+        body.classList.add("no-scroll");
+      } else {
+        body.style.position = "";
+        body.style.top = "";
+        body.style.left = "";
+        body.style.right = "";
+        body.classList.remove("no-scroll");
+        window.scrollTo(0, scrollY);
+      }
+    });
+
+    // ナビゲーションリンククリック時にメニューを閉じる
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        headerLinks.classList.remove("active");
+        body.style.position = "";
+        body.style.top = "";
+        body.style.left = "";
+        body.style.right = "";
+        body.classList.remove("no-scroll");
+        window.scrollTo(0, scrollY);
+      });
+    });
+  });
+</script>
+
+<style lang="scss">
+  @use "../../styles/breakpoints" as *;
+
+  // header
+  .header {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / .15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    width: 100%;
+    max-width: 178px;
+
+    a {
+      display: block;
+    }
+  }
+
+  .header-hamburger {
+    appearance: none;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    gap: clamp(34px, calc(34px / 1024px * 100vw), 40px);
+    padding: 0;
+  }
+
+  .header-nav-item {
+    position: relative;
+
+    a {
+      display: block;
+      padding-block: 8px;
+      font-size: clamp(15px, calc(15px / 1024px * 100vw), 16px);
+    }
+
+    &--home {
+      display: none;
+    }
+
+    &:last-child {
+      margin-inline-start: 16px;
+
+      a {
+        display: grid;
+        place-items: center;
+        height: 80px;
+        padding-inline: 40px;
+        background-color: var(--color-main);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  @media screen and (max-width: 1023px) {
+    .header {
+      // font-size: 15px;
+    }
+
+    .header-container {
+      width: 100%;
+      padding-inline: 80px;
+      position: relative;
+    }
+
+    .header-logo {
+      position: relative;
+      z-index: 30;
+    }
+
+    .header-hamburger {
+      width: 30px;
+      height: 60px;
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 80px;
+      z-index: 30;
+    }
+
+    .header-hamburger-icon {
+      display: inline-block;
+      width: inherit;
+      height: 2px;
+      background-color: var(--color-main);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+
+      &:nth-of-type(1) {
+        top: 19px;
+      }
+
+      &:nth-of-type(2) {
+        top: 29px;
+      }
+
+      &:nth-of-type(3) {
+        top: 39px;
+      }
+    }
+
+    .header-hamburger.active .header-hamburger-icon:nth-of-type(1) {
+      width: 22px;
+      transform: translateX(4px) translateY(10px) rotate(315deg);
+    }
+    .header-hamburger.active .header-hamburger-icon:nth-of-type(2) {
+      opacity: 0;
+    }
+    .header-hamburger.active .header-hamburger-icon:nth-of-type(3) {
+      width: 22px;
+      transform: translateX(4px) translateY(-10px) rotate(-315deg);
+    }
+
+    .header-link {
+      width: 70%;
+      height: calc(100vh - 80px);
+      padding-block-start: 80px;
+      padding-inline: calc(24px / var(--width-sp) * 100vw);
+      background-color: var(--color-main);
+      position: fixed;
+      top: 80px;
+      right: -70%;
+      z-index: 20;
+      overflow: auto;
+      transition: all 0.6s ease;
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    .header-nav {
+      width: 100%;
+    }
+
+    .header-nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      max-width: 320px;
+      margin-inline: auto;
+    }
+
+    .header-nav-item {
+      width: 100%;
+      text-align: center;
+
+      a {
+        display: block;
+        padding-block: 8px;
+        color: var(--color-white);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 2;
+      }
+
+      &--home {
+        display: block;
+      }
+
+      &:last-child {
+        margin-inline-start: 0;
+
+        a {
+          display: block;
+          place-items: center;
+          height: auto;
+          padding-inline: 0;
+        }
+      }
+    }
+
+    .header-contact {
+      display: block;
+      padding-block: 4px;
+      padding-inline: 12px;
+      margin-inline-end: calc(24px + 30px);
+      background-color: var(--color-main);
+      color: var(--color-white);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.75;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .header {
+      height: 60px;
+    }
+
+    .header-container {
+      padding-inline: calc(24 / 390 * 100%);
+    }
+
+    .header-logo {
+      max-width: 120px;
+    }
+
+    .header-hamburger {
+      right: calc(24 / 390 * 100%);
+    }
+
+    .header-link {
+      width: 100%;
+      height: calc(100vh - 60px);
+      top: 60px;
+      right: -100%;
+    }
+
+    .header-contact {
+      padding-block: 4px;
+      padding-inline: 10px;
+      margin-inline-end: calc(16px + 30px);
+      margin-inline-end: clamp(calc(16px + 30px), calc(calc(16px / var(--width-sp) * 100vw) + 30px) ,calc(24px + 30px));
+      font-size: 12px;
+    }
+  }
+
+  // hover action
+  @media screen and (min-width: 1024px) {
+    @media (any-hover: hover) {
+      .header-nav-item {
+        &:not(:last-child) {
+          a {
+            &::after {
+              content: "";
+              width: 0%;
+              height: 2px;
+              background-color: var(--color-main);
+              position: absolute;
+              bottom: 6px;
+              left: 0;
+              transition: width .3s ease;
+            }
+
+            &:hover::after {
+              width: 100%;
+            }
+          }
+        }
+        &:last-child {
+          transition: filter .5s ease;
+
+          &:hover {
+            filter: brightness(80%) contrast(120%);
+          }
+        }
+      }
+    }
+  }
+</style>

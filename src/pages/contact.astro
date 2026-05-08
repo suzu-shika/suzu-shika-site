@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageKv from "../components/common/PageKv.astro";
+import Form from "../components/common/Form.astro";
+import Message from "../components/common/Message.astro";
+import BreadCrumb from "../components/common/Breadcrumb.astro";
+
+// JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://suzu-shika.com/contact#contactpage",
+  "url": "https://suzu-shika.com/contact",
+  "name": "お問い合わせ｜鈴鹿Web制作（所沢市）",
+  "description": "ホームページ制作・リニューアルのご相談はこちら。埼玉県所沢市を拠点に、設計から制作・運用まで一貫して対応します。",
+  "inLanguage": "ja",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "鈴鹿Web制作",
+    "url": "https://suzu-shika.com/"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "鈴鹿Web制作",
+    "url": "https://suzu-shika.com/"
+  },
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://suzu-shika.com/#organization"
+  }
+});
+---
+
+<Layout
+  title="お問い合わせ｜ホームページ制作のご相談｜鈴鹿Web制作（所沢市）"
+  ogType="website"
+  description="ホームページ制作・リニューアルのご相談はこちら。埼玉県所沢市を拠点に、設計から制作・運用まで一貫して対応します。まずはお気軽にお問い合わせください。"
+  jsonLd={jsonLd}
+>
+  <main class="contact">
+    <div class="contact-kv">
+      <PageKv pageTitle="お問い合わせ" />
+    </div>
+    <div class="contact-content l-container-s">
+      <p class="contact-lead">ホームページ制作・リニューアルのご相談を承っています。<br>ご相談・お見積りは無料です。まずは現状のお悩みやご希望をお聞かせください。</p>
+      <div class="contact-form">
+        <Form />
+      </div>
+    </div><!-- /.contact-content.l-container-s -->
+
+    <div class="contact-note">
+      <Message />
+    </div><!-- /.contact-note -->
+
+    <!-- breadcrumb -->
+    <BreadCrumb
+      siteUrl="https://suzu-shika.com"
+      breadcrumbLists={[{ name: "お問い合わせ", schemaName: "お問い合わせ" }]}
+    />
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+  .contact-content {
+    margin-block-start: 64px;
+  }
+
+  .contact-form {
+    margin-block-start: 40px;
+  }
+
+  .contact-note {
+    margin-block-start: 64px;
+  }
+
+  @include mq() {
+    .contact-content {
+      margin-block-start: 80px;
+    }
+
+    .contact-form {
+      margin-block-start: 64px;
+    }
+
+    .contact-note {
+      margin-block-start: 80px;
+    }
+  }
+</style>

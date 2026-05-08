@@ -1,0 +1,88 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import WorksKv from "../../components/works-mahana/WorksKv.astro";
+import WorksOverview from "../../components/works-mahana/WorksOverview.astro";
+import WorksProblem from "../../components/works-mahana/WorksProblem.astro";
+import WorksBasicDesign from "../../components/works-mahana/WorksBasicDesign.astro";
+import WorksProduction from "../../components/works-mahana/WorksProduction.astro";
+import WorksReaction from "../../components/works-mahana/WorksReaction.astro";
+import WorksVoice from "../../components/works-mahana/WorksVoice.astro";
+import WorksTarget from "../../components/works-mahana/WorksTarget.astro";
+import WorksGallery from "../../components/works-mahana/WorksGallery.astro";
+import BreadCrumb from "../../components/common/Breadcrumb.astro";
+import Cta from "../../components/common/Cta.astro";
+
+// JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://suzu-shika.com/works/mahana#webpage",
+  "url": "https://suzu-shika.com/works/mahana",
+  "name": "mahana｜制作実績｜鈴鹿Web制作",
+  "description": "mahanaのホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。",
+  "inLanguage": "ja",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "鈴鹿Web制作",
+    "url": "https://suzu-shika.com/"
+  },
+  "about": {
+    "@type": "CreativeWork",
+    "name": "mahana ホームページ",
+    "url": "https://mahana-organic.com/"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "鈴鹿Web制作",
+    "url": "https://suzu-shika.com/"
+  },
+  "image": "https://suzu-shika.com/ogp.png"
+});
+---
+
+<Layout
+  title="【制作実績】mahana｜ホームページ制作事例｜鈴鹿Web制作"
+  ogType="article"
+  description="mahanaのホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。"
+  jsonLd={jsonLd}
+>
+  <main class="works">
+    <!-- works-kv -->
+    <WorksKv />
+
+    <!-- works-overview -->
+    <WorksOverview />
+
+    <!-- works-problem -->
+    <WorksProblem />
+
+    <!-- works-basic-design -->
+    <WorksBasicDesign />
+
+    <!-- works-production -->
+    <WorksProduction />
+
+    <!-- works-production -->
+    <WorksReaction />
+
+    <!-- works-voice -->
+    <WorksVoice />
+
+    <!-- works-target -->
+    <WorksTarget />
+
+    <!-- works-gallery -->
+    <WorksGallery />
+
+    <!-- breadcrumb -->
+    <BreadCrumb
+      siteUrl="https://suzu-shika.com"
+      breadcrumbLists={[
+        { name: "mahana", schemaName: "mahana" }
+      ]}
+    />
+  </main>
+
+  <!-- cta -->
+  <Cta />
+</Layout>

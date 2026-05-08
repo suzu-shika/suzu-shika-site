@@ -1,0 +1,89 @@
+<section class="top-problem">
+  <div class="l-container">
+    <h2 class="top-problem-title">今のホームページに、<br>こんな違和感はありませんか？</h2>
+    <ul class="top-problem-list">
+      <li class="top-problem-item">ホームページはあるが、問い合わせ・予約につながらない</li>
+      <li class="top-problem-item">デザインは整っているが、何を伝えたいのかが曖昧</li>
+      <li class="top-problem-item">作ったはいいが、何に使えばいいのかわからない</li>
+      <li class="top-problem-item">今のホームページが、事業に合っているかどうか自信がない</li>
+      <li class="top-problem-item">制作会社に任せたが、その後どう改善すればいいのかわからない</li>
+    </ul>
+    <p class="top-problem-text">ホームページは「見た目」だけでなく、<br>制作前の「設計」で結果が変わります。</p>
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-problem {
+    padding-block: 64px;
+  }
+
+  .top-problem-title {
+    font-size: min(24px, calc(24px / var(--width-sp) * 100vw));
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .top-problem-list {
+    display: grid;
+    gap: 12px;
+    width: fit-content;
+    padding: 0;
+    margin-block-start: 32px;
+    margin-inline: auto;
+    line-height: 1.75;
+  }
+
+  .top-problem-item {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: .5em;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      margin-block-start: .7em;
+      background-color: var(--color-main);
+    }
+  }
+
+  .top-problem-text {
+    margin-block-start: 32px;
+    font-size: min(16px, calc(16px / var(--width-sp) * 100vw));
+    font-weight: 700;
+    text-align: center;
+  }
+
+  @include mq() {
+    .top-problem {
+      padding-block: 104px;
+    }
+
+    .top-problem-title {
+      font-size: 32px;
+      letter-spacing: .05em;
+    }
+
+    .top-problem-list {
+      gap: 0;
+      margin-block-start: 40px;
+      line-height: 1.85;
+    }
+
+    .top-problem-item {
+      &::before {
+        margin-block-start: .75em;
+      }
+    }
+
+    .top-problem-text {
+      & br {
+        display: none;
+      }
+    }
+  }
+</style>

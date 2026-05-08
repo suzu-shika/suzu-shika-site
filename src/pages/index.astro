@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopKv from "../components/top/TopKv.astro";
+import TopProblem from "../components/top/TopProblem.astro";
+import TopWorks from "../components/top/TopWorks.astro";
+import TopBasicDesign from "../components/top/TopBasicDesign.astro";
+import TopFaq from "../components/top/TopFaq.astro";
+import Cta from "../components/common/Cta.astro";
+
+// JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://suzu-shika.com/#organization",
+  name: "鈴鹿Web制作",
+  "alternateName": [
+    "Suzu-Shika Web Production",
+    "Suzu Shika Web Production",
+    "すずしかWeb制作"
+  ],
+  "contactPoint": [{
+  "@type": "ContactPoint",
+  "contactType": "customer support",
+  "email": "info@suzu-shika.com",
+  "areaServed": "JP",
+  "availableLanguage": ["Japanese"]
+  }],
+  "areaServed": {
+  "@type": "AdministrativeArea",
+  "name": "埼玉県所沢市"
+  },
+  "sameAs": [
+  "https://x.com/suzu_shika_web",
+  "https://www.instagram.com/suzu_shika_web/"
+  ],
+  url: "https://suzu-shika.com/",
+  logo: "https://suzu-shika.com/assets/images/global/logo.png",
+  image: "https://suzu-shika.com/ogp.png",
+  description:
+    "埼玉県所沢市を拠点に、成果につながるホームページを設計・制作。コンテンツ・導線・運用まで一貫して設計し、公開後の改善まで見据えたWeb制作をご提案します。",
+});
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "制作期間はどれくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サイトの規模や内容によって異なりますが、一般的なホームページ制作で1〜3ヶ月ほどが目安です。お急ぎの場合も、内容によっては対応可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ホームページを作っても成果につながらないことはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、あります。見た目が整っていても、誰に何を伝え、どう行動してもらうかが整理されていないと、成果につながりにくくなります。ホームページの成果は、制作開始前の設計次第で大きく変わると考えています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "料金はどのように決まりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サイトの目的・内容や構成に応じて、プロジェクトごとにお見積もり、ご提案いたします。ご予算に応じて、段階的な制作や優先順位の整理もご相談いただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "集客や事業設計まで相談できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "チャネル設計、ファネル設計、ポジショニングなどのマーケティング基本戦略、広告運用、SNS運用、SEO・MEO対策などの具体施策など、ご要望に応じて対応いたします。事業フェーズやご予算に合わせて、優先順位を整理しながらご提案します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "公開後の保守・改善も相談できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、可能です。ホームページの保守・改善は、長期的な成果を維持するために重要です。公開後も、保守管理、コンテンツ更新やデザイン改善、ユーザー体験の向上など、ご要望に応じて対応いたします。"
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="所沢市のホームページ制作｜設計で成果につなげるWeb制作｜鈴鹿Web制作"
+  ogType="website"
+  description="埼玉県所沢市を拠点に、成果につながるホームページを設計・制作。コンテンツ・導線・運用まで一貫して設計し、公開後の改善まで見据えたWeb制作をご提案します。"
+  jsonLd={[jsonLd, faqJsonLd]}
+>
+  <main class="top">
+    <!-- top-kv -->
+    <TopKv />
+
+    <!-- top-problem -->
+    <TopProblem />
+
+    <!-- top-works -->
+    <TopWorks />
+
+    <!-- top-basic-design -->
+    <TopBasicDesign />
+
+    <!-- top-faq -->
+    <TopFaq />
+  </main>
+
+  <!-- cta -->
+  <Cta />
+</Layout>

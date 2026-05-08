@@ -1,0 +1,48 @@
+@use 'breakpoints' as *;
+
+/* -----------------------------------
+  foundation
+----------------------------------- */
+
+/* foundation > base
+----------------------------------- */
+html {
+  font-size: 100%;
+  scroll-padding-top: 56px;
+
+  @include mq() {
+    scroll-padding-top: 80px;
+  }
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-base);
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  // ハンバーガーメニューが開いたとき、背景のスクロールを禁止
+  &.no-scroll {
+    overflow: hidden;
+    height: 100vh; // モバイルSafari対応
+    position: fixed; // iOS対策（背景スクロールを完全に防ぐ）
+    width: 100%;
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  height: auto;
+  vertical-align: bottom;
+}

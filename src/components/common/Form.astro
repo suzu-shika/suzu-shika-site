@@ -1,0 +1,420 @@
+<form class="c-form" action="https://ssgform.com/s/pWA8JEWy21wm" method="post" novalidate>
+  <!-- honeypot（ボット対策） -->
+  <div class="c-form-honeypot" aria-hidden="true">
+    <label for="wana">Leave this field empty</label>
+    <input id="wana" type="text" name="wana" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <!-- お名前 -->
+  <div class="c-form-field">
+    <label for="name" class="c-form-label">
+      お名前
+      <span class="c-form-required" aria-label="必須">必須</span>
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      autocomplete="name"
+      placeholder="例）山田太郎"
+      class="c-form-input"
+      required
+      aria-describedby="name-error"
+    />
+    <p id="name-error" class="c-form-error" aria-live="polite"></p>
+  </div>
+
+  <!-- メールアドレス -->
+  <div class="c-form-field">
+    <label for="email" class="c-form-label">
+      メールアドレス
+      <span class="c-form-required" aria-label="必須">必須</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      autocomplete="email"
+      placeholder="例）info@example.com"
+      class="c-form-input"
+      required
+      inputmode="email"
+      aria-describedby="email-error"
+    />
+    <p id="email-error" class="c-form-error" aria-live="polite"></p>
+  </div>
+
+  <!-- お問い合わせ内容 -->
+  <div class="c-form-field">
+    <label for="message" class="c-form-label">
+      お問い合わせ内容
+      <span class="c-form-required" aria-label="必須">必須</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      placeholder="ご質問やお悩みなどお気軽に入力ください。"
+      class="c-form-textarea"
+      required
+      aria-describedby="message-error"
+    ></textarea>
+    <p id="message-error" class="c-form-error" aria-live="polite"></p>
+  </div>
+
+  <!-- プライバシーポリシー -->
+  <div class="c-form-privacy-policy">
+    <p id="privacy-description" class="c-form-privacy-policy-text">
+      <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+        プライバシーポリシー<span class="u-visually-hidden">（新しいタブで開きます）</span>
+      </a>に同意の上、チェックしてください。
+    </p>
+    <div class="c-form-field c-form-checkbox">
+      <label class="c-form-label c-form-checkbox-label" for="privacy">
+        <input
+          id="privacy"
+          name="privacy"
+          type="checkbox"
+          required
+          aria-describedby="privacy-description privacy-error"
+        />
+        <span class="c-form-checkbox-text">プライバシーポリシーに同意する。</span>
+      </label>
+      <p id="privacy-error" class="c-form-error c-form-error--privacy" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- 送信ボタン -->
+  <div class="c-form-submit">
+    <button type="submit" class="c-form-submit-btn">お問い合わせを送信する</button>
+  </div>
+</form>
+
+<script>
+  (() => {
+    const form = document.querySelector('.c-form');
+    if (!form) return;
+
+    const hp = form.querySelector('input[name="wana"]');
+
+    const fields = {
+      name: {
+        input: form.querySelector('#name'),
+        error: form.querySelector('#name-error'),
+        messages: {
+          valueMissing: 'お名前を入力してください。',
+        },
+      },
+      email: {
+        input: form.querySelector('#email'),
+        error: form.querySelector('#email-error'),
+        messages: {
+          valueMissing: 'メールアドレスを入力してください。',
+          typeMismatch: 'メールアドレスの形式が正しくありません。',
+        },
+      },
+      message: {
+        input: form.querySelector('#message'),
+        error: form.querySelector('#message-error'),
+        messages: {
+          valueMissing: 'お問い合わせ内容を入力してください。',
+        },
+      },
+      privacy: {
+        input: form.querySelector('#privacy'),
+        error: form.querySelector('#privacy-error'),
+        messages: {
+          valueMissing: 'プライバシーポリシーに同意してください。',
+        },
+      },
+    };
+
+    const setError = (input, error, message = '') => {
+      if (error) error.textContent = message;
+      if (input) {
+        input.setAttribute('aria-invalid', message ? 'true' : 'false');
+      }
+    };
+
+    const getMessage = (input, messages) => {
+      const { validity } = input;
+
+      if (validity.valid) return '';
+      if (validity.valueMissing) return messages.valueMissing;
+      if (validity.typeMismatch) return messages.typeMismatch;
+      if (validity.patternMismatch) return messages.patternMismatch;
+      if (validity.tooShort) return messages.tooShort;
+
+      return '入力内容を確認してください。';
+    };
+
+    const validateField = (key) => {
+      const { input, error, messages } = fields[key];
+      const message = getMessage(input, messages);
+
+      setError(input, error, message);
+      return !message;
+    };
+
+    const validatePrivacy = () => {
+      const { input, error, messages } = fields.privacy;
+      const message = input.checked ? '' : messages.valueMissing;
+
+      setError(input, error, message);
+      return !message;
+    };
+
+    const validateAll = () => {
+      if (hp && hp.value.trim() !== '') return false;
+
+      return [
+        validateField('name'),
+        validateField('email'),
+        validateField('message'),
+        validatePrivacy(),
+      ].every(Boolean);
+    };
+
+    fields.name.input.addEventListener('blur', () => validateField('name'));
+    fields.email.input.addEventListener('blur', () => validateField('email'));
+    fields.message.input.addEventListener('blur', () => validateField('message'));
+
+    fields.email.input.addEventListener('input', () => {
+      if (fields.email.input.value.trim() === '') {
+        setError(fields.email.input, fields.email.error);
+      }
+    });
+
+    fields.privacy.input.addEventListener('change', validatePrivacy);
+
+    form.addEventListener('submit', (e) => {
+      if (validateAll()) return;
+
+      e.preventDefault();
+
+      const firstInvalid =
+        form.querySelector('[aria-invalid="true"]') ||
+        form.querySelector(':invalid');
+
+      firstInvalid?.focus?.();
+    });
+  })();
+</script>
+
+<style lang="scss">
+  @use '../../styles/_breakpoints.scss' as *;
+
+  .c-form {
+    display: grid;
+    position: relative;
+  }
+
+  .c-form-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+
+  .c-form-required {
+    padding-block: 5px;
+    padding-inline: 12px;
+    background-color: #cd3939;
+    color: var(--color-white);
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .c-form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    padding-block: 8px;
+    padding-inline: 16px;
+    margin-top: 8px;
+    border: none;
+    box-shadow: 0 0 0 1px #999 inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px rgb(33 150 243) inset;
+    }
+
+    &::placeholder {
+      color: #999;
+      font-size: 15px;
+    }
+
+    &[aria-invalid='true'] {
+      box-shadow: 0 0 0 2px #cd3939 inset;
+    }
+  }
+
+  textarea {
+    height: 220px;
+    resize: vertical;
+    overflow: auto;
+  }
+
+  // エラーメッセージ
+  .c-form-error {
+    margin-block: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cd3939;
+    min-height: 24px; // 文字がない時のガタつき防止
+    text-align: justify;
+
+    &--privacy {
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+
+  // プライバシーポリシー
+  .c-form-privacy-policy {
+    margin-block-start: 24px;
+  }
+
+  .c-form-privacy-policy-text {
+    gap: 8px;
+    width: fit-content;
+    margin-inline: auto;
+    line-height: 2;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-inline-end: 8px;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        width: 16px;
+        height: 14px;
+        background-image: url(/assets/images/global/icon-external-link.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+  }
+
+  // チェックボックス
+  .c-form-checkbox {
+    margin-block-start: 32px;
+    position: relative;
+  }
+
+  .c-form-checkbox-label {
+    gap: 0;
+    font-weight: 400;
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  .c-form-checkbox input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .c-form-checkbox-text {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      border: 1px solid #999;
+      flex-shrink: 0;
+      background-color: #fff;
+      margin-block-start: 3px;
+    }
+  }
+
+  .c-form-checkbox input:checked + .c-form-checkbox-text::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0.315em;
+    transform: rotate(45deg);
+    width: 0.5em;
+    height: 0.8em;
+    border: solid var(--color-main);
+    border-width: 0 2px 2px 0;
+  }
+
+  .c-form-checkbox input:focus-visible + .c-form-checkbox-text {
+    background: linear-gradient(transparent 90%, rgba(33, 150, 243, 0.3) 90%);
+  }
+
+  // invalid（checkbox）
+  .c-form-checkbox input[aria-invalid='true'] + .c-form-checkbox-text::before {
+    border-color: #cd3939;
+  }
+
+  // 送信ボタン
+  .c-form-submit {
+    margin-block-start: 24px;
+    text-align: center;
+  }
+
+  .c-form-submit-btn {
+    display: inline-flex;
+    gap: 24px;
+    align-items: center;
+    padding-block: 16px;
+    padding-inline: 40px;
+    border-radius: 100px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.5;
+    border: none;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+      transition: filter .5s ease;
+
+      &:hover {
+        filter: brightness(80%) contrast(120%);
+      }
+    }
+  }
+</style>

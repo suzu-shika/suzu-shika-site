@@ -1,0 +1,37 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<div class="c-page-kv">
+  <div class="l-container">
+    <h1 class="c-page-kv-title-lv1">{pageTitle}</h1>
+  </div><!-- /.l-container -->
+</div>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-page-kv {
+    padding-block: 64px;
+    margin-block-start: 60px;
+    background-image: var(--gradient-kv);
+  }
+
+  .c-page-kv-title-lv1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.4;
+  }
+
+  @include mq() {
+    .c-page-kv {
+      padding-block: 80px;
+      margin-block-start: 80px;
+    }
+
+    .c-page-kv-title-lv1 {
+      font-size: 40px;
+    }
+  }
+</style>

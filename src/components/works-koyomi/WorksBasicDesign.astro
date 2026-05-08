@@ -1,0 +1,110 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro";
+---
+
+<section class="works-basic-design">
+  <div class="l-container">
+    <div class="l-section">
+      <TitleLv2 title="課題解決のための基本設計"/>
+      <div class="l-section-body">
+        <ul class="works-basic-design-card">
+          <li class="works-basic-design-card-item">
+            <div class="works-basic-design-title-lv3">
+              <span class="works-basic-design-title-lv3-number">01</span>
+              <h3 class="works-basic-design-title-lv3-text">情報設計</h3>
+            </div>
+            <ul class="works-basic-design-list c-list-green-line">
+              <li class="works-basic-design-item c-list-green-line-item">スタジオの強みの言語化・新規顧客にも伝わる言葉に整理</li>
+              <li class="works-basic-design-item c-list-green-line-item">サービスメニューを見やすく整理</li>
+            </ul>
+          </li>
+          <li class="works-basic-design-card-item">
+            <div class="works-basic-design-title-lv3">
+              <span class="works-basic-design-title-lv3-number">02</span>
+              <h3 class="works-basic-design-title-lv3-text">導線設計</h3>
+            </div>
+            <ul class="works-basic-design-list c-list-green-line">
+              <li class="works-basic-design-item c-list-green-line-item">体験予約導線を整理し、予約サイトへ一本化</li>
+              <li class="works-basic-design-item c-list-green-line-item">スマートフォンでも迷わない導線設計</li>
+            </ul>
+          </li>
+          <li class="works-basic-design-card-item">
+            <div class="works-basic-design-title-lv3">
+              <span class="works-basic-design-title-lv3-number">03</span>
+              <h3 class="works-basic-design-title-lv3-text">運用設計</h3>
+            </div>
+            <ul class="works-basic-design-list c-list-green-line">
+              <li class="works-basic-design-item c-list-green-line-item">更新頻度は低いため、CMSは非採用</li>
+              <li class="works-basic-design-item c-list-green-line-item">将来の拡張性を考慮した設計</li>
+              <li class="works-basic-design-item c-list-green-line-item">セキュリティ管理にコストをかけない設計</li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .works-basic-design {
+    background-color: var(--color-sub);
+  }
+
+  .works-basic-design-card {
+    display: grid;
+    gap: 48px;
+    padding: 0;
+  }
+
+  .works-basic-design-title-lv3 {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+
+  .works-basic-design-title-lv3-number {
+    color: var(--color-main);
+    font-size: 28px;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+
+  .works-basic-design-title-lv3-text {
+    font-size: 20px;
+    letter-spacing: .05em;
+    line-height: 1.4;
+  }
+
+  .works-basic-design-list {
+    margin-block-start: 20px;
+  }
+
+  @include mq() {
+    .works-basic-design-card {
+      gap: 40px;
+    }
+
+    .works-basic-design-title-lv3 {
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+    }
+
+    .works-basic-design-title-lv3-number {
+      margin-block-end: 3px;
+      font-size: 31px;
+    }
+
+    .works-basic-design-title-lv3-text {
+      font-size: 24px;
+    }
+
+    .works-basic-design-list {
+      margin-block-start: 24px;
+    }
+  }
+
+</style>

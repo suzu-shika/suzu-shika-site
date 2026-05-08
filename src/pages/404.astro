@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/common/Button.astro";
+---
+
+<Layout
+  title="ページが見つかりません｜鈴鹿Web制作"
+  ogType="website"
+  description="お探しのページは見つかりませんでした。URLが変更されたか削除された可能性があります。トップページから目的のページをご確認ください。"
+  noIndex="true"
+>
+  <main class="not-found">
+    <div class="l-container-s">
+      <h1 class="not-found-title-lv1">404 Not Found</h1>
+      <div class="not-found-content">
+        <p class="not-found-text">
+          <span>お探しのページは見つかりませんでした。</span>
+          <span>URLが変更されたか、削除された可能性があります。</span>
+          <span>お手数ですが、以下のリンクから目的のページをご確認ください。</span>
+        </p>
+        <div class="not-found-btn">
+          <Button
+            buttonClass="c-btn"
+            buttonUrl="/"
+            buttonText="トップページへ戻る"
+          />
+        </div>
+        <div class="not-found-link">
+          <a href="/contact">お問い合わせはこちら</a>
+        </div>
+      </div><!-- /.not-found-content -->
+    </div><!-- /.l-container-s -->
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .not-found {
+    padding-block: 80px 120px;
+    margin-block-start: 60px;
+  }
+
+  .not-found-title-lv1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .not-found-content {
+    display: grid;
+    justify-items: center;
+    gap: 64px;
+    margin-block-start: 64px;
+  }
+
+  .not-found-text {
+    display: grid;
+    gap: 1em;
+  }
+
+  .not-found-link {
+    a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 2px;
+    }
+  }
+
+  @include mq() {
+    .not-found {
+      margin-block-start: 80px;
+    }
+
+    .not-found-title-lv1 {
+      font-size: 40px;
+    }
+  }
+</style>

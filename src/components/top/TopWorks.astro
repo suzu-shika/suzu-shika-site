@@ -1,0 +1,177 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro"
+---
+
+<section class="top-works" id="works">
+  <div class="l-container">
+    <div class="l-section-top">
+      <TitleLv2 title="制作実績"/>
+      <div class="l-section-body-top">
+        <div class="top-works-list">
+          <a href="works/oita-campus-link" class="top-works-card isDisabled">
+            <div class="top-works-card-thumbnail">
+              <img src="/assets/images/works/pic-works-thumbnail-ocl@2x.webp" alt="Oita Campus Link公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+            </div>
+            <div class="top-works-card-content">
+              <div class="top-works-card-title">
+                <span class="top-works-card-category">#コーポレートサイト</span>
+                <h3 class="top-works-card-site-name">Oita Campus Link 様</h3>
+              </div>
+              <!-- <ul class="top-works-card-list">
+                <div class="top-works-card-item">信頼形成</div>
+                <div class="top-works-card-item">問い合わせ導線</div>
+                <div class="top-works-card-item">自走運用</div>
+              </ul> -->
+              <p class="top-works-card-list" style="font-size: 14px;">近日公開予定です。</p>
+            </div>
+          </a>
+
+          <a href="/works/koyomi-yoga-pilates" class="top-works-card">
+            <div class="top-works-card-thumbnail">
+              <img src="/assets/images/works/pic-works-thumbnail-koyomi@2x.webp" alt="koyomi yoga pilates公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+            </div>
+            <div class="top-works-card-content">
+              <div class="top-works-card-title">
+                <span class="top-works-card-category">#サービスサイト</span>
+                <h3 class="top-works-card-site-name">koyomi yoga pilates 様</h3>
+              </div>
+              <ul class="top-works-card-list">
+                <div class="top-works-card-item">開業初期集客</div>
+                <div class="top-works-card-item">予約導線</div>
+                <div class="top-works-card-item">小規模制作 / 拡張性</div>
+              </ul>
+            </div>
+          </a>
+
+          <a href="/works/mahana" class="top-works-card">
+            <div class="top-works-card-thumbnail">
+              <img src="/assets/images/works/pic-works-thumbnail-mahana@2x.webp" alt="mahana公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+            </div>
+            <div class="top-works-card-content">
+              <div class="top-works-card-title">
+                <span class="top-works-card-category">#サービスサイト</span>
+                <h3 class="top-works-card-site-name">mahana 様</h3>
+              </div>
+              <ul class="top-works-card-list">
+                <div class="top-works-card-item">地域認知拡大</div>
+                <div class="top-works-card-item">SEO流入</div>
+                <div class="top-works-card-item">ブランド訴求</div>
+              </ul>
+            </div>
+          </a>
+        </div>
+      </div><!-- /.l-section-body-top -->
+    </div><!-- /.l-section-top -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-works {
+    background-color: var(--color-sub);
+  }
+
+  .top-works-list {
+    display: grid;
+    gap: 40px;
+  }
+
+  .top-works-card {
+    display: flex;
+    flex-direction: column;
+    padding-block: 24px 32px;
+    background-color: var(--color-white);
+    box-shadow: 0 8px 24px 0 rgb(0 0 0 / .08);
+  }
+
+  .top-works-card-thumbnail {
+    padding-inline: 20px;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin-inline: auto;
+    }
+  }
+
+  .top-works-card-content {
+    width: 100%;
+    max-width: calc(400px + 32px * 2);
+    max-width: 420px;
+    padding-inline: 32px;
+    margin-block: 20px auto;
+    margin-inline: auto;
+  }
+
+  .top-works-card-title {
+    display: grid;
+  }
+
+  .top-works-card-category {
+    font-size: 11px;
+  }
+
+  .top-works-card-site-name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .top-works-card-list {
+    padding: 0;
+    margin-block-start: 16px;
+  }
+
+  .top-works-card-item {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 2;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--color-main);
+    }
+  }
+
+  @include mq() {
+    .top-works-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .top-works-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: min(56px, calc(56px / var(--width-pc) * 100vw));
+    }
+  }
+
+  @media (any-hover: hover) {
+    .top-works-card {
+      img {
+        transition: scale .3s ease;
+      }
+
+      &:hover {
+        .top-works-card-thumbnail {
+          overflow: hidden;
+        }
+
+        img {
+          scale: 1.03;
+        }
+      }
+    }
+  }
+
+  .isDisabled {
+    pointer-events: none;
+  }
+</style>

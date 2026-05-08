@@ -1,0 +1,68 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro";
+---
+
+<section class="works-voice">
+  <div class="l-container">
+    <div class="l-section">
+      <TitleLv2 title="お客様の声"/>
+      <div class="l-section-body">
+        <div class="works-voice-content">
+          <ul class="works-voice-list">
+            <li class="works-voice-item">開業準備で不安な時期も、ホームページ以外のことまで相談できて心強かったです。思い描いていた以上の仕上がりで、何度も感動しました。</li>
+            <li class="works-voice-item">ホームページを見た方から「素敵だと思って」と問い合わせがあり、世界観が伝わったのが嬉しかったです。</li>
+          </ul>
+          <p class="works-voice-signature">
+            <span class="works-voice-signature-title">koyomi yoga pilates オーナー</span>
+            <span class="works-voice-signature-name">髙橋 琴乃 様</span>
+          </p>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+  .works-voice {
+    background-color: var(--color-sub);
+  }
+
+  .works-voice-content {
+    max-width: calc(720px + 16px);
+  }
+
+  .works-voice-list {
+    display: grid;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .works-voice-item {
+    padding-inline-start: 16px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 12px;
+      height: 9px;
+      background-image: url(/assets/images/global/icon-quote.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left:0;
+    }
+  }
+
+  .works-voice-signature {
+    margin-block-start: 24px;
+  }
+
+  .works-voice-signature-title,
+  .works-voice-signature-name {
+    display: block;
+    text-align: right;
+  }
+</style>

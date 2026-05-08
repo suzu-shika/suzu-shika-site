@@ -1,0 +1,110 @@
+---
+type Crumb = {
+  name: string; // 表示用
+  path?: string;
+  schemaName?: string; // JSON-LD用
+};
+
+const {
+  breadcrumbLists = [],
+  siteUrl = "",
+} = Astro.props as {
+  breadcrumbLists?: Crumb[];
+  breadcrumbClass?: string;
+  siteUrl?: string;
+};
+
+const items: Crumb[] = [{ name: "ホーム", path: "/", schemaName: "ホーム" }, ...breadcrumbLists];
+
+const breadcrumbJsonLd =
+  siteUrl
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((item, index) => {
+          const itemPath =
+            item.path ??
+            (index === items.length - 1 ? Astro.url.pathname : "");
+
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.schemaName ?? item.name,
+            item: `${siteUrl}${itemPath}`,
+          };
+        }),
+      })
+    : "";
+---
+
+<div class="l-container">
+  <nav class="c-breadcrumb" aria-label="パンくずリスト">
+    <ol class="c-breadcrumb-list">
+      <li class="c-breadcrumb-item"><a href="/">ホーム</a></li>
+      {breadcrumbLists.map((item, index) => {
+        const isLast = index === breadcrumbLists.length - 1;
+
+        return (
+          <li class="c-breadcrumb-item">
+            {!isLast && item.path ? (
+              <a href={item.path}>{item.name}</a>
+            ) : (
+              <span aria-current="page">{item.name}</span>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+
+  {breadcrumbJsonLd && (
+    <script type="application/ld+json" set:html={breadcrumbJsonLd}></script>
+  )}
+</div>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-breadcrumb {
+    margin-block: 128px 20px;
+  }
+
+  .c-breadcrumb-list {
+    padding: 0;
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+
+  .c-breadcrumb-item {
+    display: inline;
+    position: relative;
+
+    &:last-child {
+      font-weight: 700;
+      color: var(--color-main);
+    }
+
+    &:not(:last-child) {
+      padding-inline-end: 24px;
+
+      &::after {
+        content: ">";
+        position: absolute;
+        top: -5px;
+        right: 8px;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding-block: 4px;
+      line-height: 1.5;
+    }
+  }
+
+  @include mq() {
+    .c-breadcrumb {
+      margin-block-start: 160px;
+    }
+  }
+</style>

@@ -1,0 +1,165 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro";
+---
+
+<section class="top-faq" id="faq">
+  <div class="l-container">
+    <div class="l-section-top">
+      <TitleLv2 title="よくあるご質問"/>
+      <div class="l-section-body-top">
+        <ul class="top-faq-list">
+          <li class="top-faq-item">
+            <dl class="top-faq-dl">
+              <dt class="top-faq-question">制作期間はどれくらいですか？</dt>
+              <dd class="top-faq-answer">サイトの規模や内容によって異なりますが、一般的なホームページ制作で1〜3ヶ月ほどが目安です。<br>お急ぎの場合も、内容によっては対応可能です。</dd>
+            </dl>
+          </li>
+          <li class="top-faq-item">
+            <dl class="top-faq-dl">
+              <dt class="top-faq-question">ホームページを作っても成果につながらないことはありますか？</dt>
+              <dd class="top-faq-answer">はい、あります。見た目が整っていても、誰に何を伝え、どう行動してもらうかが整理されていないと、成果につながりにくくなります。<br>ホームページの成果は、制作開始前の設計次第で大きく変わると考えています。</dd>
+            </dl>
+          </li>
+          <li class="top-faq-item">
+            <dl class="top-faq-dl">
+              <dt class="top-faq-question">料金はどのように決まりますか？</dt>
+              <dd class="top-faq-answer">サイトの目的・内容や構成に応じて、プロジェクトごとにお見積もり、ご提案いたします。<br>ご予算に応じて、段階的な制作や優先順位の整理もご相談いただけます。</dd>
+            </dl>
+          </li>
+          <li class="top-faq-item">
+            <dl class="top-faq-dl">
+              <dt class="top-faq-question">集客や事業設計まで相談できますか？</dt>
+              <dd class="top-faq-answer">・チャネル設計、ファネル設計、ポジショニングなどのマーケティング基本戦略<br>・広告運用、SNS運用、SEO・MEO対策などの具体施策<br>など、ご要望に応じて対応いたします。<br>事業フェーズやご予算に合わせて、優先順位を整理しながらご提案します。</dd>
+            </dl>
+          </li>
+          <li class="top-faq-item">
+            <dl class="top-faq-dl">
+              <dt class="top-faq-question">公開後の保守・改善も相談できますか？</dt>
+              <dd class="top-faq-answer">はい、可能です。ホームページの保守・改善は、長期的な成果を維持するために重要です。<br>公開後も、保守管理、コンテンツ更新やデザイン改善、ユーザー体験の向上など、ご要望に応じて対応いたします。</dd>
+            </dl>
+          </li>
+        </ul>
+      </div><!-- /.l-section-body-top -->
+    </div><!-- /.l-section-top -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-faq-list {
+    display: grid;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .top-faq-item {
+    padding-block-end: 32px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .top-faq-dl {
+    display: grid;
+    gap: 24px;
+    max-width: 720px;
+  }
+
+  .top-faq-question,
+  .top-faq-answer {
+    padding-inline-start: 38px;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+    }
+
+    &::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--color-main);
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  .top-faq-question {
+    font-weight: 700;
+
+    &::before {
+      background-color: var(--color-main);
+    }
+
+    &::after {
+      content: "Q";
+      color: var(--color-white);
+      font-size: 18px;
+      top: 5px;
+      left: 7px;
+    }
+  }
+
+  .top-faq-answer {
+    &::before {
+      background-color: var(--color-white);
+    }
+
+    &::after {
+      content: "A";
+      top: 5px;
+      left: 8px;
+    }
+  }
+
+  @include mq() {
+    .top-faq-list {
+      gap: 24px;
+      padding-block-start: 2px;
+    }
+
+    .top-faq-item {
+      padding-block-end: 24px;
+    }
+
+    .top-faq-dl {
+      gap: 28px;
+    }
+
+    .top-faq-question,
+    .top-faq-answer {
+      padding-inline-start: 48px;
+
+      &::before {
+        width: 32px;
+        height: 32px;
+        top: -2px;
+      }
+    }
+
+    .top-faq-question {
+      &::after {
+        font-size: 20px;
+        top: 4px;
+        left: 8px;
+      }
+    }
+
+    .top-faq-answer {
+      &::after {
+        font-size: 18px;
+        top: 5px;
+        left: 9px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+// 矢印
+// ex)
+// <li class="side-item">
+//     <a class="side-link">サイドメニュー</a>
+// </li>
+// .side-link{
+//     @include arrow(45deg, #000, 8px, 8px, 0, 8px, 0, auto);
+// }
+@mixin arrow($rotate: 45deg, $color: #000, $w: 6px, $h: 6px, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: relative;
+
+  &::before {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: $top;
+      bottom: $bottom;
+      left: $left;
+      right: $right;
+      width: $w;
+      height: $h;
+      border-top: 1px solid $color;
+      border-right: 1px solid $color;
+      transform: rotate($rotate);
+  }
+}
