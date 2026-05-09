@@ -93,7 +93,6 @@
     background-image: var(--gradient-kv);
   }
 
-  // 実験
   .top-kv-content {
     position: relative;
   }
@@ -104,8 +103,6 @@
     gap: 56px;
     width: fit-content;
     font-weight: 700;
-
-    // 実験
     position: relative;
     z-index: 10;
   }
@@ -122,9 +119,6 @@
   }
 
   .top-kv-image {
-    // display: none;
-
-    // 実験
     width: fit-content;
     margin-inline: auto;
     opacity: .18;
@@ -135,7 +129,6 @@
     z-index: 1;
 
     svg {
-      width: min(342px, calc(342px / var(--width-sp) * 100vw));
       width: clamp(342px, calc(342px / var(--width-sp) * 100vw), 420px);
     }
   }
@@ -167,7 +160,7 @@
     }
 
     .top-kv-image {
-      // display: block;
+      margin-inline: 0;
       opacity: 1;
       position: static;
 
