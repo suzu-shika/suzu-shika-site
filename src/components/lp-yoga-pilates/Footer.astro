@@ -1,0 +1,181 @@
+<!-- footer -->
+<footer class="footer">
+  <div class="l-container">
+    <div class="footer-logo">
+      <a href="/lp-yoga-pilates">
+        <img src="/assets/images/global/logo-white.svg" alt="鈴鹿Web制作" loading="lazy" decoding="async" width="238" height="32">
+      </a>
+      <p class="footer-logo-text">埼玉県所沢市を拠点に<br>ホームページ制作を行っています</p>
+    </div>
+    <div class="footer-link">
+      <a href="/lp-yoga-pilates/privacy-policy">プライバシーポリシー</a>
+    </div>
+    <div class="footer-copyright">
+      <small aria-label="著作権 鈴鹿Web制作">
+        &copy; Suzu-Shika Web Production
+      </small>
+    </div>
+  </div><!-- /.l-container -->
+
+  <!-- トップへ戻るボタン -->
+  <a href="#body" class="footer-page-top">
+    <span class="u-visually-hidden">ページトップへ戻る</span>
+  </a>
+</footer>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pageTop = document.querySelector(".footer-page-top");
+    const footer = document.querySelector(".footer");
+
+    if (!pageTop || !footer) return;
+
+    // 初期状態
+    pageTop.style.opacity = "0";
+    pageTop.style.pointerEvents = "none";
+
+    let footerVisible = false;
+
+    // フッター検知
+    const observer = new IntersectionObserver(
+      (entries) => {
+        footerVisible = entries[0].isIntersecting;
+        toggleButton();
+      },
+      {
+        root: null,
+        threshold: 0
+      }
+    );
+
+    observer.observe(footer);
+
+    // スクロール監視
+    window.addEventListener("scroll", toggleButton);
+
+    // ページトップへ戻る
+    pageTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    function toggleButton() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > 200 && !footerVisible) {
+        pageTop.style.opacity = "1";
+        pageTop.style.pointerEvents = "auto";
+      } else {
+        pageTop.style.opacity = "0";
+        pageTop.style.pointerEvents = "none";
+      }
+    }
+  });
+</script>
+
+<style lang="scss">
+  @use "../../styles/breakpoints" as *;
+
+  .footer {
+    padding-block: 56px 24px;
+    background-color: var(--color-main);
+    color: var(--color-bg-sub);
+    text-align: center;
+
+    @include mq() {
+      padding-block: 80px 32px;
+    }
+  }
+
+  .footer-logo {
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+
+    img {
+      max-width: 149px;
+    }
+  }
+
+  .footer-logo-text {
+    font-size: 12px;
+  }
+
+  .footer-link {
+    margin-block-start: 44px;
+
+    a {
+      display: inline-block;
+      padding-block: 4px;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+
+  .footer-copyright {
+    margin-block-start: 20px;
+    text-align: center;
+
+    small {
+      display: inline-block;
+      font-size: 12px;
+    }
+  }
+
+  // トップへ戻るボタン
+  .footer-page-top {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid;
+    color: var(--color-accent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    position: fixed;
+    right: 16px;
+    bottom: 24px;
+    transition: background-color .3s ease;
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid currentColor;
+      border-left: 3px solid currentColor;
+      margin-block-start: 8px;
+      rotate: 45deg;
+      transition: border-color .3s ease;
+    }
+
+    @include mq() {
+      width: 48px;
+      height: 48px;
+      right: 32px;
+      bottom: 32px;
+
+      &::after {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  @media (any-hover: hover)  {
+    .footer-page-top {
+      &:hover {
+        background-color: var(--color-accent);
+
+        &::after {
+          border-color: var(--color-bg);
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,69 @@
+<section class="education01">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="education01-title-lv2">
+        <h2 class="c-title-lv2"><span>ホームページには、</span><span>得意・不得意があります。</span></h2>
+      </div>
+      <div class="l-section-body">
+        <div class="education01-description">
+          <p class="education01-text">InstagramやGoogleマップは、お店やサービスを「見つけてもらう」のが得意です。</p>
+        </div>
+        <div class="education01-description">
+          <p class="education01-text">これに対して、ホームページが得意なのは、<span class="u-bold">「興味・関心」</span>を持ってもらい、<span class="u-bold">「比較・検討」</span>してもらうこと。</p>
+          <div class="education01-illustration c-illustration c-illustration--circle">
+            <p class="c-illustration-title">ホームページの得意分野</p>
+            <p class="c-illustration-head">「興味・関心」「比較・検討」</p>
+            <ul class="c-illustration-list">
+              <li class="c-illustration-item">どんなスタジオなのか</li>
+              <li class="c-illustration-item">初めてでも安心して通えるか</li>
+              <li class="c-illustration-item">他のスタジオと何が違うのか</li>
+            </ul>
+          </div>
+        </div>
+        <div class="education01-description">
+          <p class="education01-text">一方でホームページは、以下の領域は苦手としています。</p>
+          <div class="education01-illustration c-illustration c-illustration--beige c-illustration--cross">
+            <p class="c-illustration-title c-illustration-title--beige">ホームページの不得意分野</p>
+            <ul class="c-illustration-list">
+              <li class="c-illustration-item">認知を広げること</li>
+              <li class="c-illustration-item">商談・接客</li>
+              <li class="c-illustration-item">入会後のフォロー</li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .education01-description {
+    max-width: 720px;
+
+    &:nth-child(2) {
+      margin-block-start: 32px;
+    }
+
+    &:nth-child(3) {
+      margin-block-start: 40px;
+    }
+  }
+
+  .education01-illustration {
+    margin-block-start: calc(20px + 18px);
+  }
+
+  @include mq() {
+    .education01-description {
+      &:nth-child(2) {
+        margin-block-start: 24px;
+      }
+
+      &:nth-child(3) {
+        margin-block-start: 48px;
+      }
+    }
+  }
+</style>

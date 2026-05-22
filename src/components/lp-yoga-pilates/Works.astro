@@ -1,0 +1,259 @@
+<section class="works">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="works-title-lv2">
+        <h2 class="c-title-lv2">制作実績</h2>
+      </div>
+      <div class="l-section-body">
+        <div class="works-cards">
+          <section class="works-card">
+            <span class="works-label">事例<span>01</span></span>
+            <div class="works-head">
+              <div class="works-heading">
+                <h3 class="works-title-lv3">koyomi yoga pilates 様</h3>
+                <span class="works-heading-note">埼玉県所沢市｜ヨガ・ピラティススタジオ</span>
+              </div>
+              <div class="works-image">
+                <img src="../../../public/assets/images/lp-yoga-pilates/pic-works-thumbnail-koyomi@2x.webp" alt="koyomi yoga pilates公式サイトのファーストビューのスクリーンショット" loading="lazy" decoding="async" width="360" height="192">
+              </div>
+            </div>
+            <div class="works-description">
+              <dl class="works-list">
+                <dt>基本設計</dt>
+                <dd>スタジオの強みの言語化、新規顧客にも伝わる言葉に整理</dd>
+                <dd>体験予約導線を整理し、予約サイトへ一本化</dd>
+                <dd>スマートフォンでも迷わない導線設計</dd>
+                <dd>将来の拡張性を考慮した設計</dd>
+                <dd>セキュリティ管理にコストをかけない設計</dd>
+              </dl>
+              <dl class="works-list works-list--reaction">
+                <dt>公開後の反応・成果</dt>
+                <dd>検索流入が発生し、CTR(クリック率)平均7〜8%を維持</dd>
+                <dd>「所沢市 ヨガ」で上位表示</dd>
+                <dd>予約導線に加え、問い合わせフォーム経由の相談も発生</dd>
+                <dd>予約前の検討層向けにLINE公式も設置し、複数導線で運用中</dd>
+              </dl>
+            </div>
+          </section>
+          <section class="works-card">
+            <span class="works-label">事例<span>02</span></span>
+            <div class="works-head">
+              <div class="works-heading">
+                <h3 class="works-title-lv3">mahana 様</h3>
+                <span class="works-heading-note">埼玉県羽生市｜美容系プライベートサロン</span>
+              </div>
+              <div class="works-image">
+                <img src="../../../public/assets/images/lp-yoga-pilates/pic-works-thumbnail-mahana@2x.webp" alt="mahana公式サイトのファーストビューのスクリーンショット" loading="lazy" decoding="async" width="360" height="192">
+              </div>
+            </div>
+            <div class="works-description">
+              <dl class="works-list">
+                <dt>基本設計</dt>
+                <dd>サロンの特徴や施術内容を整理し、オーナーの想いを言語化</dd>
+                <dd>サービス理解から予約・問い合わせまでの導線を設計</dd>
+                <dd>スマートフォンでも迷わない導線設計</dd>
+                <dd>オーナーのみの運用体制でも、無理なく更新できる構成</dd>
+                <dd>セキュリティ管理にコストをかけない設計</dd>
+              </dl>
+              <dl class="works-list works-list--reaction">
+                <dt>公開後の反応・成果</dt>
+                <dd>地域検索からの流入が生まれ、見込み客との接点づくりに寄与</dd>
+                <dd>「羽生市 腸律」で1位表示</dd>
+                <dd>「羽生市 よもぎ蒸し」「羽生市 アロマ」でも上位表示</dd>
+                <dd>小規模サロンでも継続運用しやすい情報発信土台として機能</dd>
+              </dl>
+            </div>
+          </section>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .works-cards {
+    display: grid;
+    gap: 48px;
+  }
+
+  .works-card {
+    padding-block: 32px;
+    padding-inline: 24px;
+    background-color: var(--color-bg-sub);
+  }
+
+  .works-label {
+    display: inline-flex;
+    align-items: center;
+    padding-block: 8px;
+    padding-inline: 12px;
+    background-color: var(--color-main);
+    color: var(--color-bg-sub);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    line-height: 1;
+
+    span {
+      font-size: 14px;
+      letter-spacing: -0.05em;
+    }
+  }
+
+  .works-head {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .works-heading {
+    display: grid;
+    align-content: start;
+    gap: 2px;
+    line-height: 1.55;
+  }
+
+  .works-title-lv3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .works-heading-note {
+    font-size: 12px;
+  }
+
+  .works-image {
+    margin-block-start: 16px;
+
+    img {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  .works-description {
+    display: grid;
+    gap: 32px;
+    margin-block-start: 32px;
+  }
+
+  .works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    dt {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        margin-block-end: 2px;
+        background-image: url(/assets/images/lp-yoga-pilates/icon-pencil.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+
+    dd {
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      gap: 8px;
+      margin-inline-start: 8px;
+
+      &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        margin-block-start: 12px;
+        background-color: var(--color-main);
+      }
+    }
+
+    &--reaction {
+      dt {
+        &::before {
+          background-image: url(/assets/images/lp-yoga-pilates/icon-graph.svg);
+        }
+      }
+    }
+  }
+
+  @include mq() {
+    .works-card {
+      padding-inline: 32px;
+    }
+
+    .works-label {
+      padding-inline: 16px;
+      font-size: 14px;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    .works-head {
+      flex-direction: row;
+      gap: min(40px, calc(40 / 1024 * 100vw));
+      margin-block-start: 24px;
+    }
+
+    .works-heading {
+      flex: 272px 0 0;
+      gap: 10px;
+    }
+
+    .works-title-lv3 {
+      font-size: 24px;
+      letter-spacing: .04em;
+    }
+
+    .works-heading-note {
+      font-size: 14px;
+    }
+
+    .works-image {
+      margin-block-start: 0;
+
+      img {
+        max-width: 360px;
+      }
+    }
+
+    .works-description {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(40px, calc(48 / 1024 * 100vw), 48px);
+      margin-block-start: 40px;
+    }
+
+    .works-list {
+      dt {
+        grid-template-columns: 18px 1fr;
+        gap: 10px;
+        font-size: 18px;
+
+        &::before {
+          width: 18px;
+          height: 18px;
+          margin-block-end: 2px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .works-head {
+      gap: 80px;
+    }
+  }
+</style>

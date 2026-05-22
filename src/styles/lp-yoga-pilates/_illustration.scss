@@ -1,0 +1,157 @@
+@use '../breakpoints' as *;
+
+/* components > c-illustration
+----------------------------------- */
+.c-illustration {
+  max-width: 400px;
+  padding-block: 34px 24px;
+  padding-inline: 24px;
+  border-radius: 10px;
+  border: 2px solid var(--color-main);
+  font-size: 14px;
+  position: relative;
+
+  &--beige {
+    border-color: var(--color-accent);
+  }
+
+  &--circle {
+    &::after {
+      content: "";
+      width: min(64px, calc(64px / var(--width-sp) * 100vw));
+      height: min(64px, calc(64px / var(--width-sp) * 100vw));
+      background-image: url(/assets/images/lp-yoga-pilates/icon-circle@2x.webp);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: 46px;
+      right: min(24px, calc(24px / var(--width-sp) * 100vw));
+    }
+  }
+
+  &--cross {
+    &::after {
+      content: "";
+      width: min(50px, calc(50px / var(--width-sp) * 100vw));
+      height: min(50px, calc(50px / var(--width-sp) * 100vw));
+      background-image: url(/assets/images/lp-yoga-pilates/icon-cross@2x.webp);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: 46px;
+      right: min(24px, calc(24px / var(--width-sp) * 100vw));
+    }
+  }
+}
+
+.c-illustration-title {
+  width: fit-content;
+  padding-block: 10px;
+  padding-inline: 16px;
+  margin-inline: auto;
+  background-color: var(--color-main);
+  color: var(--color-bg-sub);
+  font-weight: 700;
+  line-height: 1;
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+
+  &--beige {
+    background-color: var(--color-accent);
+    color: var(--color-base);
+  }
+}
+
+.c-illustration-head {
+  margin-block-end: 8px;
+  font-weight: 700;
+}
+
+.c-illustration-list {
+  padding-inline-start: .5em;
+}
+
+.c-illustration-item {
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  gap: .5em;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-block-start: 11px;
+    background-color: var(--color-base);
+  }
+}
+
+.c-illustration-description-list {
+  display: grid;
+  gap: 8px;
+}
+
+.c-illustration-description-list-item {
+  padding-inline-start: calc(1em + 4px);
+  position: relative;
+
+  dt {
+    font-weight: 700;
+  }
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-base);
+    position: absolute;
+    top: 11px;
+    left: .5em;
+  }
+}
+
+@include mq() {
+  .c-illustration {
+    max-width: 460px;
+    padding-block: 40px 32px;
+    padding-inline: 32px;
+    font-size: 16px;
+
+    &--circle {
+      &::after {
+        width: 64px;
+        height: 64px;
+        top: 90px;
+        right: 32px;
+      }
+    }
+
+    &--cross {
+      &::after {
+        width: 50px;
+        height: 50px;
+        top: 64px;
+        right: 32px;
+      }
+    }
+  }
+
+  .c-illustration-title {
+    top: -20px;
+  }
+
+  .c-illustration-head {
+    margin-block-end: 12px;
+  }
+
+  .c-illustration-description-list-item {
+    &::before {
+      top: 12px;
+    }
+  }
+}

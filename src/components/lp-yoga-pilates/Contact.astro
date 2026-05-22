@@ -1,0 +1,58 @@
+---
+import Form from "./Form.astro";
+---
+
+<section class="contact">
+  <div class="l-container-s">
+    <div class="contact-section l-section">
+      <div class="contact-title-lv2">
+        <h2 class="contact-title-lv2-text c-title-lv2">お問い合わせ</h2>
+      </div>
+      <div class="l-section-body">
+        <p class="contact-text">体験予約につながるホームページについて、まずはお気軽にご相談ください。</p>
+        <div class="contact-form">
+          <Form />
+        </div>
+        <p class="contact-note">内容を確認の上、通常1〜2営業日以内にご返信いたします。</p>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .contact-section {
+    padding-block-end: 120px;
+  }
+
+  .contact-title-lv2-text {
+    justify-content: center;
+  }
+
+  .contact-text,
+  .contact-note {
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  .contact-note {
+    display: flex;
+    margin-block-start: 64px;
+    font-size: 14px;
+
+    &::before {
+      content: "※";
+    }
+  }
+
+  .contact-form {
+    margin-block-start: 40px;
+  }
+
+  @include mq() {
+    .contact-form {
+      margin-block-start: 48px;
+    }
+  }
+</style>

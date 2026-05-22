@@ -1,0 +1,49 @@
+@use '../breakpoints' as *;
+/* -----------------------------------
+  layout
+----------------------------------- */
+
+/* layout > container
+----------------------------------- */
+.l-container,
+.l-container-s {
+  padding-inline: calc(24 / 390 * 100%);
+}
+
+@include mq() {
+  .l-container,
+  .l-container-s {
+    width: 100%;
+    max-width: calc(var(--width-content) + 80px * 2);
+    padding-inline: 80px;
+    margin-inline: auto;
+  }
+
+  .l-container-s {
+    max-width: calc(var(--width-content-s) + 80px * 2);
+  }
+}
+
+/* layout > section
+----------------------------------- */
+.l-section {
+  padding-block: 80px;
+}
+
+@include mq() {
+  .l-section {
+    padding-block: 120px;
+  }
+}
+
+/* layout > section-body
+----------------------------------- */
+.l-section-body {
+  margin-block-start: 32px;
+}
+
+@include mq() {
+  .l-section-body {
+    margin-block-start: 40px;
+  }
+}

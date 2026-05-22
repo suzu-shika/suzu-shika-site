@@ -3,27 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import PageKv from "../components/common/PageKv.astro";
 import BreadCrumb from "../components/common/Breadcrumb.astro";
 import Cta from "../components/common/Cta.astro";
-
-// JSON-LD
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://creative-basbousa-a8451a.netlify.app/#organization",
-  name: "NPO法人 Oita Campus Link",
-  alternateName: "Oita Campus Link",
-  url: "https://creative-basbousa-a8451a.netlify.app/",
-  logo: "https://creative-basbousa-a8451a.netlify.app/assets/images/global/logo.png",
-  image: "https://creative-basbousa-a8451a.netlify.app/ogp.png",
-  description:
-    "鈴鹿Web制作のプライバシーポリシーです。個人情報の取り扱い方針や利用目的、管理方法についてご説明しています。",
-});
 ---
 
 <Layout
   title="プライバシーポリシー｜鈴鹿Web制作"
   ogType="website"
   description="鈴鹿Web制作のプライバシーポリシーです。個人情報の取り扱い方針や利用目的、管理方法についてご説明しています。"
-  jsonLd={jsonLd}
 >
   <main class="privacy">
     <div class="privacy-kv">

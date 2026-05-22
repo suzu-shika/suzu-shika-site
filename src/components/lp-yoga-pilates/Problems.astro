@@ -1,0 +1,85 @@
+<section class="problems">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="problems-title-lv2">
+        <h2 class="c-title-lv2">こんなお悩みはありませんか？</h2>
+      </div>
+      <div class="l-section-body">
+        <p class="problems-lead">ホームページは作ったけど...</p>
+        <ul class="problems-list">
+          <li class="problems-item">Instagramも頑張っているのに体験予約につながらない</li>
+          <li class="problems-item">Googleマップは見られているが問い合わせが少ない</li>
+          <li class="problems-item">SNS・予約サイト・ホームページがバラバラ</li>
+          <li class="problems-item">もう何ヶ月もブログの更新が止まっている</li>
+          <li class="problems-item">ブログは頑張っているのに体験申し込みが増えない</li>
+          <li class="problems-item">制作会社に任せたが、その後どう改善すればいいのかわからない</li>
+        </ul>
+        <p class="problems-text">
+          <span>頑張りが足りないのでしょうか？<br>いいえ、そうではないかもしれません。</span>
+          <span><span class="u-bold">“体験予約につながる流れ”</span> が整理されていない可能性があります。</span>
+        </p>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .problems {
+    background-color: var(--color-bg-sub);
+  }
+
+  .problems-list {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    margin-block-start: 10px;
+  }
+
+  .problems-item {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 8px;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      margin-block-start: 5px;
+      background-image: url(/assets/images/lp-yoga-pilates/icon-check@2x.webp);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+
+  .problems-text {
+    display: grid;
+    gap: 16px;
+    margin-block-start: 40px;
+  }
+
+  @include mq() {
+    .problems-list {
+      gap: 12px;
+      margin-block-start: 16px;
+    }
+
+    .problems-item {
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+
+      &::before {
+        width: 20px;
+        height: 20px;
+        margin-block-start: 4px;
+      }
+    }
+
+    .problems-text {
+      margin-block-start: 32px;
+    }
+
+  }
+</style>

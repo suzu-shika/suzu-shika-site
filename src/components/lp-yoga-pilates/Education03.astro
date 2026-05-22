@@ -1,0 +1,119 @@
+<section class="education03">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="education03-title-lv2">
+        <h2 class="c-title-lv2"><span>公開後も、</span><span>ホームページを育て続ける。</span></h2>
+      </div>
+      <div class="education03-section-body l-section-body">
+        <section class="education03-section">
+          <h3 class="education03-title-lv3">ホームページは育てるもの</h3>
+          <p class="education03-text">ホームページのゴールは、公開することではありません。<br>むしろ、Web集客の最適化に向けた改善プロセスは、公開してからが本当のスタートです。</p>
+          <p class="education03-text"><span class="u-bold">サービス内容の見直し</span>や、<span class="u-bold">導線の改善</span>を重ねながら、少しずつホームページを育てていくことが大切です。</p>
+        </section>
+        <section class="education03-section">
+          <h3 class="education03-title-lv3">せっかく作ったホームページが使われなくなる？</h3>
+          <p class="education03-text">しかし実際には、様々な理由から、徐々に使われなくなってしまうケースも少なくありません。</p>
+          <div class="education03-illustration c-illustration c-illustration--beige">
+            <p class="c-illustration-title c-illustration-title--beige">ホームページが使われなくなる理由</p>
+            <ul class="c-illustration-list">
+              <li class="c-illustration-item">更新がしづらい</li>
+              <li class="c-illustration-item">修正のたびに負担が大きい</li>
+              <li class="c-illustration-item">運用コストが高い</li>
+            </ul>
+          </div>
+        </section>
+        <section class="education03-section">
+          <h3 class="education03-title-lv3">ホームページを育てる基本設計</h3>
+          <p class="education03-text">だからこそ私たちは、公開後も育てやすい状態を、制作前の段階から設計しています。</p>
+          <div class="education03-illustration c-illustration">
+            <p class="c-illustration-title">ホームページを育てる基本設計</p>
+            <dl class="c-illustration-description-list">
+              <div class="c-illustration-description-list-item">
+                <dt>更新しやすい構成</dt>
+                <dd>オーナー様がご自身で更新するかどうかも含めてご提案</dd>
+              </div>
+              <div class="c-illustration-description-list-item">
+                <dt>運用負荷を抑える技術選定</dt>
+                <dd>セキュリティ管理や保守コストにも配慮</dd>
+              </div>
+              <div class="c-illustration-description-list-item">
+                <dt> 改善しやすい実装構造</dt>
+                <dd>コンテンツの差し替え・追加コストの軽減</dd>
+              </div>
+            </dl>
+          </div>
+          <p class="education03-text">公開後も、<span class="u-bold">無理なく、無駄なく運用を続けられる</span>状態を整えておくこと。<br>これも、成果につながるホームページ制作の重要な要素だと考えています。</p>
+        </section>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .education03-section-body {
+    display: grid;
+    gap: 40px;
+  }
+
+  .education03-title-lv3 {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.55;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 22px;
+      margin-block-start: 4px;
+      background-color: var(--color-main);
+    }
+  }
+
+  .education03-text {
+    margin-block-start: 16px;
+
+    .education03-illustration + & {
+      margin-block-start: 24px;
+    }
+  }
+
+  .education03-illustration {
+    margin-block-start: calc(20px + 18px);
+  }
+
+  @include mq() {
+    .education03-section-body {
+      gap: 56px;
+    }
+
+    .education03-title-lv3 {
+      grid-template-columns: 5px 1fr;
+      gap: 10px;
+      font-size: 24px;
+      letter-spacing: .04em;
+
+      &::before {
+        width: 5px;
+        height: 26px;
+        margin-block-start: 5px;
+      }
+    }
+
+    .education03-text {
+      margin-block-start: 20px;
+
+      & + & {
+        margin-block-start: 16px;
+      }
+    }
+
+    .education03-illustration {
+      margin-block-start: calc(24px + 18px);
+    }
+  }
+</style>

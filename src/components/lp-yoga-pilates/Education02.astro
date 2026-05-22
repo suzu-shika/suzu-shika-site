@@ -1,0 +1,64 @@
+<section class="education02">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="education02-title-lv2">
+        <h2 class="c-title-lv2"><span>だからこそ、</span><span>「つなぐ設計」が重要です。</span></h2>
+      </div>
+      <div class="l-section-body">
+        <div class="education02-description">
+          <p class="education02-text">SNS・Googleマップ、ホームページ、予約サイト。<br>それぞれがバラバラだと、狙って成果につなげることは難しくなります。</p>
+          <p class="education02-text">InstagramやGoogleマップで興味を持った人を、スムーズに予約サイトへ誘導する。<br>その集約点・中継地点に位置するホームページには、<span class="u-bold">「興味を持った人を予約につなげる」橋渡し役としての役割があります。</span></p>
+          <p class="education02-text">だからこそ重要なのが、<br><span class="u-bold">「SNS・Google → ホームページ → 予約サイト」</span><br>を<span class="u-bold">スムーズにつなぐ導線設計</span>です。</p>
+        </div>
+        <div class="education02-illustration">
+          <picture class="education02-illustration-image">
+            <source media="(max-width: 767px)" srcset="/assets/images/lp-yoga-pilates/image-funnel-sp@2x.webp">
+            <source media="(min-width: 768px)" srcset="/assets/images/lp-yoga-pilates/image-funnel-pc@2x.webp">
+            <img src="/assets/images/lp-yoga-pilates/image-funnel-pc@2x.webp" alt="SNS・Googleマップ・Google検索で認知され、ホームページで興味関心と比較検討を経て予約につながる流れ" loading="lazy" decoding="async" width="427" height="367">
+          </picture>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .education02 {
+    background-color: var(--color-bg-sub);
+  }
+
+  .education02-description {
+    display: grid;
+    gap: 32px;
+    max-width: 720px;
+  }
+
+  .education02-illustration {
+    margin-block-start: 48px;
+  }
+
+  .education02-illustration-image {
+    img {
+      width: 100%;
+      max-width: 342px;
+    }
+  }
+
+  @include mq() {
+    .education02-description {
+      gap: 24px;
+    }
+
+    .education02-illustration {
+      margin-block-start: 56px;
+    }
+
+    .education02-illustration-image {
+      img {
+        max-width: 427px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,120 @@
+<section class="flow">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="flow-title-lv2">
+        <h2 class="c-title-lv2">ご依頼からサイト公開まで</h2>
+      </div>
+      <div class="l-section-body">
+        <ol class="flow-list">
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">1</span>
+            <span class="flow-text">無料相談・ヒアリング</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">2</span>
+            <span class="flow-text">課題整理・ご提案・お見積もり</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">3</span>
+            <span class="flow-text">ご契約</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">4</span>
+            <span class="flow-text">プロジェクト設計</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">5</span>
+            <span class="flow-text">サイト設計</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">6</span>
+            <span class="flow-text">デザイン・実装</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">7</span>
+            <span class="flow-text">公開・導線調整</span>
+          </li>
+          <li class="flow-item">
+            <span class="flow-number" aria-hidden="true">8</span>
+            <span class="flow-text">公開後サポート開始</span>
+          </li>
+        </ol>
+        <p class="flow-note">※サイト公開までの目安期間：2〜3ヶ月</p>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .flow-list {
+    display: grid;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .flow-item {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: 12px;
+    line-height: 1;
+
+    &:not(:last-child) .flow-number::before {
+      content: "";
+      width: 1px;
+      height: 24px;
+      border-left: 1px dashed;
+      position: absolute;
+      bottom: -26px;
+      left: 12px;
+    }
+  }
+
+  .flow-number {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid;
+    background-color: var(--color-bg);
+    color: var(--color-main);
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .flow-note {
+    margin-block-start: 24px;
+    font-size: 14px;
+  }
+
+  @include mq() {
+    .flow-list {
+      gap: 32px;
+    }
+
+    .flow-item {
+      grid-template-columns: 32px 1fr;
+      gap: 16px;
+
+      &:not(:last-child) .flow-number::before {
+        height: 32px;
+        bottom: -34px;
+        left: 13px;
+      }
+    }
+
+    .flow-number {
+      width: 32px;
+      height: 32px;
+      font-size: 17px;
+    }
+
+    .flow-note {
+      margin-block-start: 32px;
+    }
+  }
+</style>

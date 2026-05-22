@@ -1,0 +1,232 @@
+/* -----------------------------------
+  css reset
+----------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* -----------------------------------
+  global
+----------------------------------- */
+/* global > color
+----------------------------------- */
+:root {
+  --color-base: #333;
+  --color-main: #1c4b4f;
+  --color-accent: #d9c7b8;
+  --color-bg: #fff;
+  --color-bg-sub: #f5f7f6;
+}
+
+/* global > content-width
+----------------------------------- */
+:root {
+  --width-content: 960px;
+  --width-content-s: 800px;
+}
+
+/* global > device-width
+----------------------------------- */
+:root {
+  --width-sp: 390px;
+  --width-pc: 1440px;
+}
+
+/* global > font
+----------------------------------- */
+:root {
+  --font-family-base: -apple-system,
+  BlinkMacSystemFont,
+  "Hiragino Kaku Gothic ProN",
+  "Noto Sans JP",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+}
+
+/* -----------------------------------
+  foundation
+----------------------------------- */
+/* foundation > base
+----------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-base);
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.85;
+}
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* -----------------------------------
+  utility
+----------------------------------- */
+/* visually-hidden */
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+}
+
+/* disabled link */
+.u-disabled-link {
+  pointer-events: none;
+  text-decoration: none;
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* no-sp */
+.u-no-sp {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .u-no-sp {
+    display: block;
+  }
+}
+/* no-pc */
+@media screen and (min-width: 768px) {
+  .u-no-pc {
+    display: none;
+  }
+}
+/* bold */
+.u-bold {
+  font-weight: 700;
+}
+
+/* -----------------------------------
+  layout
+----------------------------------- */
+/* layout > container
+----------------------------------- */
+.l-container,
+.l-container-s {
+  padding-inline: 6.1538461538%;
+}
+
+@media screen and (min-width: 768px) {
+  .l-container,
+.l-container-s {
+    width: 100%;
+    max-width: calc(var(--width-content) + 160px);
+    padding-inline: 80px;
+    margin-inline: auto;
+  }
+  .l-container-s {
+    max-width: calc(var(--width-content-s) + 160px);
+  }
+}
+/* layout > section
+----------------------------------- */
+.l-section {
+  padding-block: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .l-section {
+    padding-block: 120px;
+  }
+}
+/* layout > section-body
+----------------------------------- */
+.l-section-body {
+  -webkit-margin-before: 32px;
+          margin-block-start: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .l-section-body {
+    -webkit-margin-before: 40px;
+            margin-block-start: 40px;
+  }
+}
+/* -----------------------------------
+  components
+----------------------------------- */
+/* components > c-title-lv2
+----------------------------------- */
+.c-title-lv2 {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+@media screen and (min-width: 768px) {
+  .c-title-lv2 {
+    font-size: 32px;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* components > c-illustration
+----------------------------------- */
+/*# sourceMappingURL=lp-yoga-pilates.css.map */

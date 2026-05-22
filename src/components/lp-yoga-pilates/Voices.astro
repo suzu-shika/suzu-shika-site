@@ -1,0 +1,89 @@
+<section class="voices">
+  <div class="l-container">
+    <div class="voices-section l-section">
+      <div class="voices-title-lv2">
+        <h2 class="c-title-lv2">お客様の声</h2>
+      </div>
+      <div class="l-section-body">
+        <div class="voices-list">
+          <section class="voices-item">
+            <h3 class="voices-title-lv3">
+              <span class="voices-title-lv3-name">髙橋 琴乃 様</span>
+              <span class="voices-title-lv3-shop">koyomi yoga pilates</span>
+            </h3>
+            <div class="voices-description">
+              <p class="voices-text">開業準備で不安な時期も、<span class="u-bold">ホームページ以外のことまで相談できて心強かった</span>です。思い描いていた以上の仕上がりで、何度も感動しました。</p>
+              <p class="voices-text">ホームページを見た方から「素敵だと思って」と問い合わせがあり、<span class="u-bold">世界観が伝わったのが嬉しかったです</span>。</p>
+            </div>
+          </section>
+          <section class="voices-item">
+            <h3 class="voices-title-lv3">
+              <span class="voices-title-lv3-name">澤出 由香莉 様</span>
+              <span class="voices-title-lv3-shop">mahana</span>
+            </h3>
+            <div class="voices-description">
+              <p class="voices-text">私らしい世界観を表現した、温かみのあるホームページだと感じました。一つひとつの言葉にも意味が込められていて、<span class="u-bold">想いが伝わる表現に感動しました</span>。</p>
+              <p class="voices-text"><span class="u-bold">検索でも見つけてもらいやすくなりました</span>。</p>
+            </div>
+          </section>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .voices-section {
+    padding-block-start: 0;
+  }
+
+  .voices-list {
+    display: grid;
+    gap: 48px;
+  }
+
+  .voices-item {
+    padding-block: 32px;
+    padding-inline: 24px;
+    background-color: rgb(217 199 184 / .25);
+  }
+
+  .voices-title-lv3 {
+    display: grid;
+    gap: 2px;
+    line-height: 1.5;
+  }
+
+  .voices-title-lv3-name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .voices-title-lv3-shop {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .voices-description {
+    display: grid;
+    gap: 16px;
+    margin-block-start: 20px;
+  }
+
+  @include mq() {
+    .voices-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(40px, calc(48 / 1024 * 100vw), 48px);
+    }
+
+    .voices-item {
+      padding-inline: 32px;
+    }
+
+    .voices-title-lv3-name {
+      font-size: 20px;
+    }
+  }
+</style>

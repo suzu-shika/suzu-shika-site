@@ -1,0 +1,20 @@
+@use '../breakpoints' as *;
+/* -----------------------------------
+  components
+----------------------------------- */
+
+/* components > c-title-lv2
+----------------------------------- */
+.c-title-lv2 {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.55;
+
+  @include mq() {
+    font-size: 32px;
+    letter-spacing: .04em;
+  }
+}
+

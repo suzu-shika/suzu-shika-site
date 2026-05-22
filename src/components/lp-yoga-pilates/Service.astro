@@ -1,0 +1,155 @@
+<section class="service">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="service-title-lv2">
+        <h2 class="c-title-lv2">サービス内容</h2>
+      </div>
+      <div class="l-section-body">
+        <ol class="service-ordered-list">
+          <li class="service-ordered-list-item">
+            <h3 class="service-title-lv3">
+              <span class="service-title-lv3-number" aria-hidden="true">01</span>
+              <span class="service-title-lv3-text">プロジェクト設計</span>
+            </h3>
+            <div class="service-description">
+              <p class="service-text">ホームページの得意分野を活かすための前提を整理します。</p>
+              <ul class="service-unordered-list">
+                <li class="service-unordered-list-item">ターゲット整理</li>
+                <li class="service-unordered-list-item">予約導線整理</li>
+                <li class="service-unordered-list-item">集客導線整理</li>
+              </ul>
+            </div>
+          </li>
+          <li class="service-ordered-list-item">
+            <h3 class="service-title-lv3">
+              <span class="service-title-lv3-number" aria-hidden="true">02</span>
+              <span class="service-title-lv3-text">サイト設計</span>
+            </h3>
+            <div class="service-description">
+              <p class="service-text">文字だけでもユーザーに訴求できるレベルにまで設計を磨き上げます。</p>
+              <ul class="service-unordered-list">
+                <li class="service-unordered-list-item">ページ・コンテンツ構成の整理</li>
+                <li class="service-unordered-list-item">文章構成・編集</li>
+              </ul>
+            </div>
+          </li>
+          <li class="service-ordered-list-item">
+            <h3 class="service-title-lv3">
+              <span class="service-title-lv3-number" aria-hidden="true">03</span>
+              <span class="service-title-lv3-text">デザイン・実装</span>
+            </h3>
+            <div class="service-description">
+              <p class="service-text">見やすい・読みやすい・使いやすいサイトを形にします。</p>
+              <ul class="service-unordered-list">
+                <li class="service-unordered-list-item">デザイン制作</li>
+                <li class="service-unordered-list-item">コーディング（インターネット上で閲覧できる形に実装）</li>
+                <li class="service-unordered-list-item">公開作業</li>
+              </ul>
+            </div>
+          </li>
+          <li class="service-ordered-list-item">
+            <h3 class="service-title-lv3">
+              <span class="service-title-lv3-number" aria-hidden="true">04</span>
+              <span class="service-title-lv3-text">公開後サポート</span>
+            </h3>
+            <div class="service-description">
+              <p class="service-text">無理なく、無駄なく運用を続けられるよう、毎月のメンテナンスを行います。</p>
+              <ul class="service-unordered-list">
+                <li class="service-unordered-list-item">軽微な修正（テキストの修正・追加、写真の差し替えなど）</li>
+                <li class="service-unordered-list-item">状態確認</li>
+                <li class="service-unordered-list-item">簡単なご相談対応</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .service-ordered-list {
+    display: grid;
+    gap: 40px;
+    padding: 0;
+  }
+
+  .service-ordered-list-item {
+    display: flex;
+    flex-direction: column;
+    padding-block: 24px;
+    padding-inline: 24px;
+    border-radius: 10px;
+    border: 2px solid var(--color-main);
+  }
+
+  .service-title-lv3 {
+    display: flex;
+    gap: 10px;
+    font-weight: 700;
+  }
+
+  .service-title-lv3-number {
+    margin-block-start: 2px;
+    color: var(--color-main);
+    font-size: 26px;
+    letter-spacing: -.03em;
+    line-height: 1;
+  }
+
+  .service-title-lv3-text {
+    font-size: 20px;
+    line-height: 1.55;
+  }
+
+  .service-description {
+    margin-block-start: 16px;
+  }
+
+  .service-unordered-list {
+    padding-inline-start: 8px;
+    margin-block-start: 16px;
+  }
+
+  .service-unordered-list-item {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 8px;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      margin-block-start: 12px;
+      background-color: var(--color-main);
+    }
+  }
+
+  @include mq() {
+    .service-ordered-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px clamp(40px, calc(48 / 1024 * 100vw), 48px);
+    }
+
+    .service-ordered-list-item {
+      padding-block: 32px;
+      padding-inline: 32px;
+    }
+
+    .service-title-lv3 {
+      gap: clamp(10px, calc(10 / 768 * 100vw), 12px);
+    }
+
+    .service-title-lv3-number {
+      font-size: clamp(26px, calc(26 / 768 * 100vw), 30px);
+    }
+
+    .service-title-lv3-text {
+      font-size: clamp(20px, calc(20 / 768 * 100vw), 24px);
+      letter-spacing: .04em;
+    }
+  }
+</style>

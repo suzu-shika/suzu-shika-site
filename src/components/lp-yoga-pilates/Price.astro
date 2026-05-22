@@ -1,0 +1,114 @@
+<section class="price">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="price-title-lv2">
+        <h2 class="c-title-lv2">料金について</h2>
+      </div>
+      <div class="l-section-body">
+        <div class="price-list">
+          <section class="price-item">
+            <h3 class="price-title-lv3">ホームページ制作</h3>
+            <p class="price-text">目安：30万円前後（税抜）</p>
+            <p class="price-note">完全オーダーメイドのため内容・ボリュームにより変動しますが、多くのスタジオ様には30万円前後にてご依頼いただいています。</p>
+            <p class="price-note">優先順位をつけて柔軟にご提案しています。</p>
+          </section>
+          <section class="price-item">
+            <h3 class="price-title-lv3 price-title-lv3--maintenance">月額保守</h3>
+            <p class="price-text">1.2万〜1.5万円/<span class="price-small">月</span>（税抜）</p>
+            <p class="price-note">主にセキュリティ管理の条件により変動します。</p>
+            <p class="price-note">保守契約をご希望されない場合は、別途サイト公開費を頂戴いたします。</p>
+          </section>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .price {
+    background-color: var(--color-bg-sub);
+  }
+
+  .price-list {
+    display: grid;
+    gap: 40px;
+  }
+
+  .price-title-lv3 {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.55;
+
+    &::before {
+      content: "";
+      width: 24px;
+      height: 18px;
+      background-image: url(/assets/images/lp-yoga-pilates/icon-laptop.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+
+    &--maintenance {
+      &::before {
+        background-image: url(/assets/images/lp-yoga-pilates/icon-wrench.svg);
+      }
+    }
+  }
+
+  .price-text {
+    margin-block-start: 16px;
+    font-weight: 700;
+    letter-spacing: .05em;
+  }
+
+  .price-small {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: bottom;
+  }
+
+  .price-note {
+    display: grid;
+    grid-template-columns: 1em 1fr;
+    margin-block-start: 16px;
+    font-size: 14px;
+
+    &::before {
+      content: "※";
+    }
+
+    & + & {
+      margin-block-start: 8px;
+    }
+  }
+
+  @include mq() {
+    .price-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(40px, calc(48 / 1024 * 100vw), 48px);
+    }
+
+    .price-title-lv3 {
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      font-size: 24px;
+      letter-spacing: .04em;
+
+      &::before {
+        width: 32px;
+        height: 24px;
+      }
+    }
+
+    .price-text {
+      margin-block-start: 24px;
+    }
+  }
+</style>

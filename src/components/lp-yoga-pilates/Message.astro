@@ -1,0 +1,34 @@
+<section class="message">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="message-title-lv2">
+        <h2 class="message-title-lv2-text c-title-lv2"><span>まずは今の状態を</span><span>整理するところから。</span></h2>
+      </div>
+      <div class="l-section-body">
+        <p class="message-text">体験予約につながるホームページを作るためには、ホームページ単体ではなく、<span class="u-bold">集客の各フェーズ全体を俯瞰して見ることが重要</span>です。</p>
+        <p class="message-text">「今のホームページは、なぜ予約につながらないのか？」<br>まずは、そこを一緒に整理するところから始めましょう。</p>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .message {
+    background-color: var(--color-bg-sub);
+  }
+
+  .message-title-lv2-text {
+    justify-content: center;
+  }
+
+  .message-text {
+    max-width: 720px;
+    margin-inline: auto;
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+</style>

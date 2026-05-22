@@ -1,0 +1,49 @@
+<section class="lead">
+  <div class="l-container">
+    <div class="l-section">
+      <h2 class="lead-title-lv2">埼玉県所沢市を拠点に、<br>Webサイト制作を行っています。</h2>
+      <p class="lead-text">所沢市、川越市および近隣地域のヨガ・ピラティススタジオ向けに、<br>体験予約につながるホームページを制作しています。</p>
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .lead-title-lv2 {
+    color: var(--color-main);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .lead-text {
+    margin-block-start: 32px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @include mq() {
+    .lead-title-lv2 {
+      font-size: 24px;
+      letter-spacing: .04em;
+
+      br {
+        display: none;
+      }
+    }
+
+    .lead-text {
+      margin-block-start: 40px;
+      font-size: 18px;
+      text-align: center;
+
+      br {
+        display: block;
+      }
+    }
+  }
+</style>

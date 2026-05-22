@@ -1,0 +1,192 @@
+---
+import Layout from "../../layouts/LayoutLpYogaPilates.astro";
+import Kv from "../../components/lp-yoga-pilates/Kv.astro";
+import Lead from "../../components/lp-yoga-pilates/Lead.astro";
+import Problems from "../../components/lp-yoga-pilates/Problems.astro";
+import Education01 from "../../components/lp-yoga-pilates/Education01.astro";
+import Education02 from "../../components/lp-yoga-pilates/Education02.astro";
+import Education03 from "../../components/lp-yoga-pilates/Education03.astro";
+import Works from "../../components/lp-yoga-pilates/Works.astro";
+import Voices from "../../components/lp-yoga-pilates/Voices.astro";
+import Service from "../../components/lp-yoga-pilates/Service.astro";
+import Price from "../../components/lp-yoga-pilates/Price.astro";
+import Flow from "../../components/lp-yoga-pilates/Flow.astro";
+import Faq from "../../components/lp-yoga-pilates/Faq.astro";
+import Message from "../../components/lp-yoga-pilates/Message.astro";
+import Contact from "../../components/lp-yoga-pilates/Contact.astro";
+import Cta from "../../components/lp-yoga-pilates/Cta.astro";
+
+// JSON-LD
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://suzu-shika.com/lp-yoga-pilates/",
+      "url": "https://suzu-shika.com/lp-yoga-pilates/",
+      "name": "体験予約につながるホームページ制作｜ヨガ・ピラティススタジオ向け",
+      "description": "SNS・Google・予約サイトをつなぐ導線設計で、体験予約につながるホームページを制作。ヨガ・ピラティススタジオ向けのWeb制作サービスです。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://suzu-shika.com/#website"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://suzu-shika.com/lp-yoga-pilates/#service",
+      "name": "ヨガ・ピラティススタジオ向けホームページ制作",
+      "serviceType": "ホームページ制作",
+      "provider": {
+        "@type": "Organization",
+        "name": "鈴鹿Web制作",
+        "url": "https://suzu-shika.com/"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "所沢市"
+        },
+        {
+          "@type": "Place",
+          "name": "川越市"
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "ヨガ・ピラティススタジオ運営者"
+      },
+      "description": "SNS・Google・予約サイトをつなぐ導線設計で、体験予約につながるホームページを制作するサービスです。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://suzu-shika.com/#website",
+      "url": "https://suzu-shika.com/",
+      "name": "鈴鹿Web制作",
+      "inLanguage": "ja"
+    }
+  ]
+});
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ホームページを作れば、すぐに体験予約は増えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ホームページは比較・検討を後押しする役割が得意です。ただし、SNS発信やGoogleマップ対策、接客など、ホームページ以外の要素も重要になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "InstagramやLINEの運用代行もお願いできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基本プランである「サイト制作＋月額保守」では、基本設計、ホームページ制作、最低限の保守管理に対応しています。InstagramやLINEの運用代行などは、必要に応じて別途ご相談いただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "文章や原稿を用意するのが苦手です。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通常は、入念なヒアリング内容をもとに、掲載内容や文章はこちらで作成・編集しています。必要に応じて、箇条書きや簡単なメモなど、素材の提供をお願いする場合がありますが、本格的な原稿をご用意いただく必要はありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ブログ機能は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スタジオの状況によって変わります。ブログは、うまく活用できれば、SEOや情報発信に役立つケースもあります。ただし、継続的に発信できる運用体制を確保できるかどうかまで含めて考えることが重要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "公開後のサポートには、どこまで含まれますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "月額保守の基本プランでは、軽微な修正、状態確認、簡単なご相談対応など、最低限のサポートを行っています。これ以外の内容については、必要に応じて別途ご相談いただいています。"
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="体験予約につながるホームページ制作｜ヨガ・ピラティススタジオ向け｜鈴鹿Web制作"
+  ogType="website"
+  description="ヨガ・ピラティススタジオ向けのホームページ制作サービス。SNS・Google・予約サイトをつなぐ導線設計で、体験予約につながるサイトを制作します。所沢市・川越市および近隣地域対応。"
+  jsonLd={[jsonLd, faqJsonLd]}
+  noIndex="true"
+>
+  <main>
+    <!-- kv -->
+    <Kv />
+
+    <!-- lead -->
+    <Lead />
+
+    <!-- problem -->
+    <Problems />
+
+    <!-- education01 -->
+    <Education01 />
+
+    <!-- education02 -->
+    <Education02 />
+
+    <!-- cta -->
+    <Cta
+      ctaText01="まずは今のホームページの"
+      ctaText02="状態を整理したい方へ"
+    />
+
+    <!-- education03 -->
+    <Education03 />
+
+    <!-- cta -->
+    <Cta
+      ctaText01="まずはどこを改善すべきか"
+      ctaText02="整理したい方へ"
+    />
+
+    <!-- works -->
+    <Works />
+
+    <!-- voices -->
+    <Voices />
+
+    <!-- cta -->
+    <Cta
+      ctaText01="ご自分のスタジオでも"
+      ctaText02="改善できるか相談したい方へ"
+    />
+
+    <!-- service -->
+    <Service />
+
+    <!-- price -->
+    <Price />
+
+    <!-- flow -->
+    <Flow />
+
+    <!-- cta -->
+    <Cta
+      ctaText01="問題点を伝えて"
+      ctaText02="改善案を整理したい方へ"
+    />
+
+    <!-- faq -->
+    <Faq />
+
+    <!-- message -->
+    <Message />
+
+    <!-- contact -->
+    <Contact />
+  </main>
+</Layout>

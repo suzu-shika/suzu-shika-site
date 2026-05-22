@@ -1,0 +1,53 @@
+---
+import Button from "./Button.astro";
+const { ctaText01, ctaText02 } = Astro.props;
+---
+
+<section class="c-cta">
+  <div class="l-container">
+    <h2 class="c-cta-text">{ctaText01}<br>{ctaText02}</h2>
+    <div class="c-cta-btn">
+      <Button
+      buttonText="無料相談はこちら"
+      buttonUrl="#contact"
+      buttonAriaLabel="お問い合わせ・無料相談をする"
+      />
+    </div>
+  </div><!-- /.l-container -->
+</section>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-cta {
+    padding-block: 72px;
+    background-color: var(--color-main);
+    text-align: center;
+  }
+
+  .c-cta-text {
+    color: var(--color-bg-sub);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .c-cta-btn {
+    margin-block-start: 56px;
+  }
+
+  @include mq() {
+    .c-cta {
+      padding-block: 88px;
+    }
+
+    .c-cta-text {
+      font-size: 24px;
+      letter-spacing: .04em;
+    }
+
+    .c-cta-btn {
+      margin-block-start: 64px;
+    }
+  }
+</style>
