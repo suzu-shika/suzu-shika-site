@@ -1,10 +1,13 @@
 ---
 import Button from "./Button.astro";
-const { ctaText01, ctaText02 } = Astro.props;
+const { ctaText01, ctaText02, ctaIcon } = Astro.props;
 ---
 
 <section class="c-cta">
   <div class="l-container">
+    <div class="c-cta-icon">
+      <img src={ctaIcon} alt="" loading="lazy" decoding="async" width="40" height="40">
+    </div>
     <h2 class="c-cta-text">{ctaText01}<br>{ctaText02}</h2>
     <div class="c-cta-btn">
       <Button
@@ -20,34 +23,40 @@ const { ctaText01, ctaText02 } = Astro.props;
   @use '../../styles/breakpoints' as *;
 
   .c-cta {
-    padding-block: 72px;
-    background-color: var(--color-main);
+    padding-block: 48px;
+    background-image: linear-gradient(180deg, rgb(251 244 232), rgb(227 210 185));
     text-align: center;
   }
 
+  .c-cta-icon {
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 40px;
+    }
+  }
+
   .c-cta-text {
-    color: var(--color-bg-sub);
+    margin-block-start: 16px;
+    color: var(--color-main);
     font-size: 20px;
     font-weight: 700;
     line-height: 1.55;
   }
 
   .c-cta-btn {
-    margin-block-start: 56px;
+    margin-block-start: 48px;
   }
 
   @include mq() {
     .c-cta {
-      padding-block: 88px;
+      padding-block: 68px;
     }
 
     .c-cta-text {
       font-size: 24px;
       letter-spacing: .04em;
-    }
-
-    .c-cta-btn {
-      margin-block-start: 64px;
     }
   }
 </style>
