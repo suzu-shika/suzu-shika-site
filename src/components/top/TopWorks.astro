@@ -1,16 +1,23 @@
 ---
-import TitleLv2 from "../common/TitleLv2.astro"
+import TitleLv2 from "../common/TitleLv2.astro";
 ---
 
 <section class="top-works" id="works">
   <div class="l-container">
     <div class="l-section-top">
-      <TitleLv2 title="制作実績"/>
+      <TitleLv2 title="制作実績" />
       <div class="l-section-body-top">
         <div class="top-works-list">
           <a href="works/oita-campus-link" class="top-works-card isDisabled">
             <div class="top-works-card-thumbnail">
-              <img src="/assets/images/works/pic-works-thumbnail-ocl@2x.webp" alt="Oita Campus Link公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+              <img
+                src="/assets/images/works/pic-works-thumbnail-ocl@2x.webp"
+                alt="Oita Campus Link公式サイトのファーストビュー"
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="160"
+              />
             </div>
             <div class="top-works-card-content">
               <div class="top-works-card-title">
@@ -22,13 +29,22 @@ import TitleLv2 from "../common/TitleLv2.astro"
                 <li class="top-works-card-item">問い合わせ導線</li>
                 <li class="top-works-card-item">自走運用</li>
               </ul> -->
-              <p class="top-works-card-list" style="font-size: 14px;">近日公開予定です。</p>
+              <p class="top-works-card-list" style="font-size: 14px;">
+                近日公開予定です。
+              </p>
             </div>
           </a>
 
           <a href="/works/koyomi-yoga-pilates" class="top-works-card">
             <div class="top-works-card-thumbnail">
-              <img src="/assets/images/works/pic-works-thumbnail-koyomi@2x.webp" alt="koyomi yoga pilates公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+              <img
+                src="/assets/images/works/pic-works-thumbnail-koyomi@2x.webp"
+                alt="koyomi yoga pilates公式サイトのファーストビュー"
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="160"
+              />
             </div>
             <div class="top-works-card-content">
               <div class="top-works-card-title">
@@ -45,7 +61,14 @@ import TitleLv2 from "../common/TitleLv2.astro"
 
           <a href="/works/mahana" class="top-works-card">
             <div class="top-works-card-thumbnail">
-              <img src="/assets/images/works/pic-works-thumbnail-mahana@2x.webp" alt="mahana公式サイトのファーストビュー" loading="lazy" decoding="async" width="300" height="160">
+              <img
+                src="/assets/images/works/pic-works-thumbnail-mahana@2x.webp"
+                alt="mahana公式サイトのファーストビュー"
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="160"
+              />
             </div>
             <div class="top-works-card-content">
               <div class="top-works-card-title">
@@ -66,7 +89,7 @@ import TitleLv2 from "../common/TitleLv2.astro"
 </section>
 
 <style lang="scss">
-  @use '../../styles/breakpoints' as *;
+  @use "../../styles/breakpoints" as *;
 
   .top-works {
     background-color: var(--color-sub);
@@ -82,7 +105,7 @@ import TitleLv2 from "../common/TitleLv2.astro"
     flex-direction: column;
     padding-block: 24px 32px;
     background-color: var(--color-white);
-    box-shadow: 0 8px 24px 0 rgb(0 0 0 / .08);
+    box-shadow: 0 8px 24px 0 rgb(0 0 0 / 0.08);
   }
 
   .top-works-card-thumbnail {
@@ -149,14 +172,14 @@ import TitleLv2 from "../common/TitleLv2.astro"
   @media screen and (min-width: 1024px) {
     .top-works-list {
       grid-template-columns: repeat(3, 1fr);
-      gap: min(56px, calc(56px / var(--width-pc) * 100vw));
+      gap: min(56px, calc(56 / var(--width-pc) * 100vw));
     }
   }
 
   @media (any-hover: hover) {
     .top-works-card {
       img {
-        transition: scale .3s ease;
+        transition: scale 0.3s ease;
       }
 
       &:hover {

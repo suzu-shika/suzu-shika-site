@@ -1,21 +1,42 @@
 ---
-import Button from "../common/Button.astro"
+import Button from "../common/Button.astro";
 ---
 
 <section class="kv">
   <div class="kv-bg">
     <picture class="kv-bg-image">
-      <source media="(max-width: 767px)" srcset="/assets/images/lp-yoga-pilates/bg-kv-a-sp@2x.webp">
-      <source media="(min-width: 768px)" srcset="/assets/images/lp-yoga-pilates/bg-kv-a-pc@2x.webp">
-      <img src="/assets/images/lp-yoga-pilates/bg-kv-a-pc@2x.webp" alt="" loading="eager" decoding="async" fetchpriority="high" width="1440" height="700">
+      <source
+        media="(max-width: 767px)"
+        srcset="/assets/images/lp-yoga-pilates/bg-kv-a-sp@2x.webp"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="/assets/images/lp-yoga-pilates/bg-kv-a-pc@2x.webp"
+      />
+      <img
+        src="/assets/images/lp-yoga-pilates/bg-kv-a-pc@2x.webp"
+        alt=""
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width="1440"
+        height="700"
+      />
     </picture>
   </div>
   <div class="kv-container l-container">
     <h1 class="kv-main-copy">
-      <span>作るだけで終わらない。</span><span>体験予約につながる</span><span>ホームページ制作。</span>
+      <span>作るだけで終わらない。</span><span>体験予約につながる</span><span
+        >ホームページ制作。</span
+      >
     </h1>
     <p class="kv-sub-copy">
-      <span>SNS・Googleからホームページへ、<br>ホームページから予約サイトへ。</span><span>集客導線全体を整えて、<br>成果につながるサイトを制作します。</span>
+      <span
+        >SNS・Googleからホームページへ、<br
+        />ホームページから予約サイトへ。</span
+      ><span
+        >集客導線全体を整えて、<br />成果につながるサイトを制作します。</span
+      >
     </p>
     <div class="kv-btn">
       <Button
@@ -27,16 +48,32 @@ import Button from "../common/Button.astro"
   </div><!-- /.l-container -->
   <div class="kv-image">
     <div class="kv-image-main">
-      <img src="/assets/images/lp-yoga-pilates/pic-kv-main@2x.webp" alt="" loading="eager" decoding="async" fetchpriority="high" width="510" height="375">
+      <img
+        src="/assets/images/lp-yoga-pilates/pic-kv-main@2x.webp"
+        alt=""
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width="510"
+        height="375"
+      />
     </div>
     <div class="kv-image-sub">
-      <img src="/assets/images/lp-yoga-pilates/pic-kv-sub-a@2x.webp" alt="" loading="eager" decoding="async" fetchpriority="high" width="322" height="225">
+      <img
+        src="/assets/images/lp-yoga-pilates/pic-kv-sub-a@2x.webp"
+        alt=""
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width="322"
+        height="225"
+      />
     </div>
   </div>
 </section>
 
 <style lang="scss">
-  @use '../../styles/breakpoints' as *;
+  @use "../../styles/breakpoints" as *;
 
   .kv {
     display: grid;
@@ -62,15 +99,19 @@ import Button from "../common/Button.astro"
 
   .kv-main-copy {
     display: grid;
-    gap: calc(8px / var(--width-sp) * 100vw);
-    margin-block-start: calc(24px / var(--width-sp) * 100vw);
-    font-size: calc(28px / var(--width-sp) * 100vw);
+    gap: calc(8 / var(--width-sp) * 100vw);
+    margin-block-start: calc(24 / var(--width-sp) * 100vw);
+    font-size: calc(28 / var(--width-sp) * 100vw);
     font-weight: 700;
-    letter-spacing: .04em;
+    letter-spacing: 0.04em;
     line-height: 1.6;
 
     span:not(:nth-child(2)) {
-      background-image: linear-gradient(180deg, rgb(28 75 79), rgb(64 172 181) 100%);
+      background-image: linear-gradient(
+        180deg,
+        rgb(28 75 79),
+        rgb(64 172 181) 100%
+      );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -80,21 +121,21 @@ import Button from "../common/Button.astro"
     span:nth-child(2) {
       width: fit-content;
       background-color: var(--color-main);
-      padding-block: calc(4px / var(--width-sp) * 100vw);
-      padding-inline: calc(8px / var(--width-sp) * 100vw);
-      border-radius: calc(4px / var(--width-sp) * 100vw);
+      padding-block: calc(4 / var(--width-sp) * 100vw);
+      padding-inline: calc(8 / var(--width-sp) * 100vw);
+      border-radius: calc(4 / var(--width-sp) * 100vw);
       color: var(--color-bg);
     }
   }
 
   .kv-sub-copy {
     display: grid;
-    gap: calc(4px / var(--width-sp) * 100vw);
-    margin-block-start: calc(310px / var(--width-sp) * 100vw);
+    gap: calc(4 / var(--width-sp) * 100vw);
+    margin-block-start: calc(310 / var(--width-sp) * 100vw);
     color: var(--color-main);
-    font-size: calc(14px / var(--width-sp) * 100vw);
+    font-size: calc(14 / var(--width-sp) * 100vw);
     font-weight: 700;
-    letter-spacing: .04em;
+    letter-spacing: 0.04em;
     line-height: 1.7;
     text-align: center;
 
@@ -105,7 +146,7 @@ import Button from "../common/Button.astro"
   }
 
   .kv-btn {
-    margin-block-start: calc(32px / var(--width-sp) * 100vw);
+    margin-block-start: calc(32 / var(--width-sp) * 100vw);
     text-align: center;
   }
 
@@ -113,85 +154,85 @@ import Button from "../common/Button.astro"
   .kv-image {
     width: 100%;
     position: absolute;
-    top: calc(240px / var(--width-sp) * 100vw);
+    top: calc(240 / var(--width-sp) * 100vw);
     left: 0;
 
     img {
-      box-shadow: 0 0 15px 0 rgb(197 197 196 / .5);
+      box-shadow: 0 0 15px 0 rgb(197 197 196 / 0.5);
     }
   }
 
   .kv-image-main {
     img {
-      width: calc(320px / var(--width-sp) * 100vw);
+      width: calc(320 / var(--width-sp) * 100vw);
     }
   }
 
   .kv-image-sub {
     position: absolute;
-    top: calc(-50px / var(--width-sp) * 100vw);
+    top: calc(-50 / var(--width-sp) * 100vw);
     right: 0;
 
     img {
-      width: calc(195px / var(--width-sp) * 100vw);
+      width: calc(195 / var(--width-sp) * 100vw);
     }
   }
 
   @include mq() {
     .kv {
-      height: min(700px, calc(700px / var(--width-pc) * 100vw));
+      height: min(700px, calc(700 / var(--width-pc) * 100vw));
     }
 
     .kv-bg-image {
       img {
-        height: min(700px, calc(700px / var(--width-pc) * 100vw));
+        height: min(700px, calc(700 / var(--width-pc) * 100vw));
         object-fit: cover;
       }
     }
 
     .kv-main-copy {
       width: fit-content;
-      gap: min(8px, calc(8px / var(--width-pc) * 100vw));
-      margin-block-start: min(100px, calc(100px / var(--width-pc) * 100vw));
-      font-size: min(40px, calc(40px / var(--width-pc) * 100vw));
+      gap: min(8px, calc(8 / var(--width-pc) * 100vw));
+      margin-block-start: min(100px, calc(100 / var(--width-pc) * 100vw));
+      font-size: min(40px, calc(40 / var(--width-pc) * 100vw));
 
       span:nth-child(2) {
-        padding-block: min(4px, calc(4px / var(--width-pc) * 100vw));
-        padding-inline: min(8px, calc(8px / var(--width-pc) * 100vw));
-        border-radius: min(4px, calc(4px / var(--width-pc) * 100vw));
+        padding-block: min(4px, calc(4 / var(--width-pc) * 100vw));
+        padding-inline: min(8px, calc(8 / var(--width-pc) * 100vw));
+        border-radius: min(4px, calc(4 / var(--width-pc) * 100vw));
       }
     }
 
     .kv-sub-copy {
-      gap: min(8px, calc(8px / var(--width-pc) * 100vw));
-      margin-block-start: min(24px, calc(24px / var(--width-pc) * 100vw));
-      font-size: min(24px, calc(24px / var(--width-pc) * 100vw));
+      gap: min(8px, calc(8 / var(--width-pc) * 100vw));
+      margin-block-start: min(24px, calc(24 / var(--width-pc) * 100vw));
+      font-size: min(24px, calc(24 / var(--width-pc) * 100vw));
       text-align: left;
     }
 
     .kv-btn {
-      margin-block-start: min(64px, calc(64px / var(--width-pc) * 100vw));
+      margin-block-start: min(64px, calc(64 / var(--width-pc) * 100vw));
       text-align: left;
     }
 
     // 画像（position: absolute）
     .kv-image {
-      width: min(585px, calc(585px / var(--width-pc) * 100vw));
-      top: min(232px, calc(232px / var(--width-pc) * 100vw));
+      width: min(585px, calc(585 / var(--width-pc) * 100vw));
+      top: min(232px, calc(232 / var(--width-pc) * 100vw));
       left: 50%;
     }
 
     .kv-image-main {
       img {
-        width: min(480px, calc(480px / var(--width-pc) * 100vw));
+        width: min(480px, calc(480 / var(--width-pc) * 100vw));
       }
     }
 
     .kv-image-sub {
-      top: max(-74px, calc(-74px / var(--width-pc) * 100vw));
+      top: max(-74px, calc(-74 / var(--width-pc) * 100vw));
 
       img {
-        width: min(293px, calc(293px / var(--width-pc) * 100vw));
+        width: min(293px, calc(293 / var(--width-pc) * 100vw));
       }
     }
   }

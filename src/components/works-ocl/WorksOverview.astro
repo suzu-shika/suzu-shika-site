@@ -5,7 +5,7 @@ import TitleLv2 from "../common/TitleLv2.astro";
 <section class="works-overview">
   <div class="l-container">
     <div class="l-section">
-      <TitleLv2 title="プロジェクト概要"/>
+      <TitleLv2 title="プロジェクト概要" />
       <div class="l-section-body">
         <dl class="works-overview-list">
           <div class="works-overview-item">
@@ -22,17 +22,22 @@ import TitleLv2 from "../common/TitleLv2.astro";
           </div>
           <div class="works-overview-item">
             <dt class="works-overview-term">ターゲット</dt>
-            <dd class="works-overview-description">学生との共同プロジェクトに関心がある企業の代表や担当者<br>学生と企業の連携を促進したい地方公共団体や公的組織の担当者</dd>
+            <dd class="works-overview-description">
+              学生との共同プロジェクトに関心がある企業の代表や担当者<br
+              />学生と企業の連携を促進したい地方公共団体や公的組織の担当者
+            </dd>
           </div>
         </dl>
-        <p class="works-overview-text">学生と企業・行政をつなぐ活動を「学生主導」で行う団体の価値を、外部にわかりやすく伝えるためのホームページを制作しました。</p>
+        <p class="works-overview-text">
+          学生と企業・行政をつなぐ活動を「学生主導」で行う団体の価値を、外部にわかりやすく伝えるためのホームページを制作しました。
+        </p>
       </div><!-- /.l-section-body -->
     </div><!-- /.l-section -->
   </div><!-- /.l-container -->
 </section>
 
 <style lang="scss">
-  @use '../../styles/breakpoints' as *;
+  @use "../../styles/breakpoints" as *;
 
   .works-overview-list {
     display: grid;
@@ -42,12 +47,12 @@ import TitleLv2 from "../common/TitleLv2.astro";
   .works-overview-item {
     display: grid;
     grid-template-columns: 92px 1fr;
-    gap: min(32px, calc(32px / var(--width-sp) * 100vw));
+    gap: min(32px, calc(32 / var(--width-sp) * 100vw));
   }
 
   .works-overview-term {
     font-weight: 700;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 
   .works-overview-text {

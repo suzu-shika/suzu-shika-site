@@ -18,30 +18,30 @@
   &--circle {
     &::after {
       content: "";
-      width: min(64px, calc(64px / var(--width-sp) * 100vw));
-      height: min(64px, calc(64px / var(--width-sp) * 100vw));
+      width: min(64px, calc(64 / var(--width-sp) * 100vw));
+      height: min(64px, calc(64 / var(--width-sp) * 100vw));
       background-image: url(/assets/images/lp-yoga-pilates/icon-circle@2x.webp);
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
       position: absolute;
       top: 46px;
-      right: min(24px, calc(24px / var(--width-sp) * 100vw));
+      right: min(24px, calc(24 / var(--width-sp) * 100vw));
     }
   }
 
   &--cross {
     &::after {
       content: "";
-      width: min(50px, calc(50px / var(--width-sp) * 100vw));
-      height: min(50px, calc(50px / var(--width-sp) * 100vw));
+      width: min(50px, calc(50 / var(--width-sp) * 100vw));
+      height: min(50px, calc(50 / var(--width-sp) * 100vw));
       background-image: url(/assets/images/lp-yoga-pilates/icon-cross@2x.webp);
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
       position: absolute;
       top: 46px;
-      right: min(24px, calc(24px / var(--width-sp) * 100vw));
+      right: min(24px, calc(24 / var(--width-sp) * 100vw));
     }
   }
 }

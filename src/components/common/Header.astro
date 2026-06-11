@@ -108,7 +108,7 @@ const { logo, logoAlt } = Astro.props;
     width: 100%;
     height: 80px;
     background-color: var(--color-white);
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / .15);
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.15);
     position: fixed;
     top: 0;
     left: 0;
@@ -242,7 +242,7 @@ const { logo, logoAlt } = Astro.props;
       width: 70%;
       height: calc(100vh - 80px);
       padding-block-start: 80px;
-      padding-inline: calc(24px / var(--width-sp) * 100vw);
+      padding-inline: calc(24 / var(--width-sp) * 100vw);
       background-color: var(--color-main);
       position: fixed;
       top: 80px;
@@ -338,7 +338,11 @@ const { logo, logoAlt } = Astro.props;
       padding-block: 4px;
       padding-inline: 10px;
       margin-inline-end: calc(16px + 30px);
-      margin-inline-end: clamp(calc(16px + 30px), calc(calc(16px / var(--width-sp) * 100vw) + 30px) ,calc(24px + 30px));
+      margin-inline-end: clamp(
+        calc(16px + 30px),
+        calc(calc(16 / var(--width-sp) * 100vw) + 30px),
+        calc(24px + 30px)
+      );
       font-size: 12px;
     }
   }
@@ -357,7 +361,7 @@ const { logo, logoAlt } = Astro.props;
               position: absolute;
               bottom: 6px;
               left: 0;
-              transition: width .3s ease;
+              transition: width 0.3s ease;
             }
 
             &:hover::after {
@@ -366,7 +370,7 @@ const { logo, logoAlt } = Astro.props;
           }
         }
         &:last-child {
-          transition: filter .5s ease;
+          transition: filter 0.5s ease;
 
           &:hover {
             filter: brightness(80%) contrast(120%);
