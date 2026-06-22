@@ -1,0 +1,69 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro";
+---
+
+<section class="works-voice">
+  <div class="l-container">
+    <div class="l-section">
+      <TitleLv2 title="お客様の声"/>
+      <div class="l-section-body">
+        <div class="works-voice-content">
+          <ul class="works-voice-list">
+            <li class="works-voice-item">見やすく、体験レッスンへの導線が整った、想像以上にいいホームページになりました。</li>
+            <li class="works-voice-item">親しみを感じられるホームページになったと思います。
+              画面の構成や言葉の選び方もとても分かりやすく、教室の雰囲気を丁寧に形にしていただき嬉しく思います。</li>
+          </ul>
+          <p class="works-voice-signature">
+            <span class="works-voice-signature-title">Ka Pā Hula O Alohilani オーナー</span>
+            <span class="works-voice-signature-name">高橋 正子 様</span>
+          </p>
+        </div>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+  .works-voice {
+    background-color: var(--color-sub);
+  }
+
+  .works-voice-content {
+    max-width: calc(720px + 16px);
+  }
+
+  .works-voice-list {
+    display: grid;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .works-voice-item {
+    padding-inline-start: 16px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 12px;
+      height: 9px;
+      background-image: url(/assets/images/global/icon-quote.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left:0;
+    }
+  }
+
+  .works-voice-signature {
+    margin-block-start: 24px;
+  }
+
+  .works-voice-signature-title,
+  .works-voice-signature-name {
+    display: block;
+    text-align: right;
+  }
+</style>
