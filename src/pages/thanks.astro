@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="お問い合わせありがとうございました｜鈴鹿Web制作"
+  ogType="website"
+  description="お問い合わせありがとうございます。内容を確認の上、3営業日以内にご連絡いたします。"
+  noindex="true"
+>
+  <main class="thanks">
+    <div class="l-container-s">
+      <h1 class="thanks-title-lv1">お問い合わせいただき、<span>ありがとうございます。</span></h1>
+      <div class="thanks-content">
+        <p class="thanks-text">入力いただいたメールアドレス宛に、確認メールをお送りしました。内容をご確認ください。<br>確認メールが届かない場合は、迷惑メールフォルダもあわせてご確認ください。</p>
+        <p class="thanks-text">お問い合わせ内容を確認の上、3営業日以内にご連絡いたします。<br>3営業日を過ぎても連絡がない場合は、お手数ですが再度お問い合わせください。</p>
+        <div class="thanks-top-link">
+          <a href="/">トップページに戻る</a>
+        </div>
+      </div>
+    </div><!-- /.l-container-s -->
+
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .thanks {
+    padding-block: 120px;
+  }
+
+  .thanks-title-lv1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.55;
+    text-align: center;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .thanks-content {
+    margin-block-start: 32px;
+  }
+
+  .thanks-text {
+    & + & {
+      margin-block-start: 1em;
+    }
+  }
+
+  .thanks-top-link {
+    margin-block-start: 32px;
+
+    a {
+      display: inline-block;
+      padding-block: 4px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  @include mq() {
+    .thanks {
+      padding-block: 200px;
+    }
+
+    .thanks-title-lv1 {
+      font-size: 32px;
+    }
+
+    .thanks-content {
+      margin-block-start: 40px;
+    }
+
+    .thanks-top-link {
+      margin-block-start: 40px;
+    }
+  }
+</style>
