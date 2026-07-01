@@ -66,18 +66,18 @@
     let footerVisible = false;
 
     // フッター検知
-    const observer = new IntersectionObserver(
-      (entries) => {
-        footerVisible = entries[0].isIntersecting;
-        toggleButton();
-      },
-      {
-        root: null,
-        threshold: 0
-      }
-    );
+    // const observer = new IntersectionObserver(
+    //   (entries) => {
+    //     footerVisible = entries[0].isIntersecting;
+    //     toggleButton();
+    //   },
+    //   {
+    //     root: null,
+    //     threshold: 0
+    //   }
+    // );
 
-    observer.observe(footer);
+    // observer.observe(footer);
 
     // スクロール監視
     window.addEventListener("scroll", toggleButton);
@@ -301,7 +301,7 @@
     height: 40px;
     border-radius: 50%;
     border: 2px solid;
-    color: var(--color-main);
+    color: #2c696f;
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s;
@@ -337,7 +337,7 @@
   @media (any-hover: hover)  {
     .footer-page-top {
       &:hover {
-        background-color: var(--color-main);
+        background-color: currentColor;
 
         &::after {
           border-color: var(--color-white);

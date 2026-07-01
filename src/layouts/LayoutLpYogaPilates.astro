@@ -31,7 +31,8 @@ const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PPQLLNRP');</script>
+      })(window,document,'script','dataLayer','GTM-PPQLLNRP');
+    </script>
     <!-- End Google Tag Manager -->
 
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -59,6 +60,9 @@ const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image:src" content={ogImage} />
 
+    <!-- reCAPTCHA -->
+    <script is:inline src="https://www.google.com/recaptcha/api.js"></script>
+
     <!-- JSON-LD -->
     {
       jsonLdList.map((item) => (
@@ -69,8 +73,10 @@ const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 
   <body class="lp-yoga-pilates">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPQLLNRP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPQLLNRP"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <slot />

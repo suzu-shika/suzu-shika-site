@@ -37,18 +37,18 @@
     let footerVisible = false;
 
     // フッター検知
-    const observer = new IntersectionObserver(
-      (entries) => {
-        footerVisible = entries[0].isIntersecting;
-        toggleButton();
-      },
-      {
-        root: null,
-        threshold: 0
-      }
-    );
+    // const observer = new IntersectionObserver(
+    //   (entries) => {
+    //     footerVisible = entries[0].isIntersecting;
+    //     toggleButton();
+    //   },
+    //   {
+    //     root: null,
+    //     threshold: 0
+    //   }
+    // );
 
-    observer.observe(footer);
+    // observer.observe(footer);
 
     // スクロール監視
     window.addEventListener("scroll", toggleButton);
