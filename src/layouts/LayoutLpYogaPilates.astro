@@ -60,8 +60,12 @@ const jsonLdList = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image:src" content={ogImage} />
 
-    <!-- reCAPTCHA -->
-    <script is:inline src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- Cloudflare Turnstile -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
 
     <!-- JSON-LD -->
     {

@@ -1,4 +1,4 @@
-<form class="c-form" action="https://ssgform.com/s/9SQOTffopxPc" method="post" id="contact-form" novalidate>
+<form class="c-form" action="https://ssgform.com/s/9SQOTffopxPc" method="post" novalidate>
   <!-- honeypot（ボット対策） -->
   <div class="c-form-honeypot" aria-hidden="true">
     <label for="wana">Leave this field empty</label>
@@ -84,20 +84,18 @@
     </div>
   </div>
 
+  <!-- Cloudflare Turnstile -->
+  <div class="c-form-turnstile">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAADuMpgg001M2BtVq"></div>
+  </div>
+
   <!-- 送信ボタン -->
   <div class="c-form-submit">
-    <button type="submit" class="c-form-submit-btn g-recaptcha" data-sitekey="6LcZlz8tAAAAAExOafL6EKrndg6JmCVMcS56xJS5" data-callback="onSubmit" data-action="contact">お問い合わせを送信する</button>
+    <button type="submit" class="c-form-submit-btn">お問い合わせを送信する</button>
   </div>
 </form>
 
-<script is:inline>
-  function onSubmit(token) {
-    var form = document.getElementById('contact-form');
-    if(form.reportValidity()) {
-      form.submit();
-    }
-  }
-
+<script>
   (() => {
     const form = document.querySelector('.c-form');
     if (!form) return;
@@ -393,6 +391,12 @@
   // invalid（checkbox）
   .c-form-checkbox input[aria-invalid='true'] + .c-form-checkbox-text::before {
     border-color: #cd3939;
+  }
+
+  // Cloudflare Turnstile
+  .c-form-turnstile {
+    margin-block: 8px 16px;
+    text-align: center;
   }
 
   // 送信ボタン
