@@ -5,9 +5,33 @@ import TitleLv2 from "../common/TitleLv2.astro";
 <section class="top-works" id="works">
   <div class="l-container">
     <div class="l-section-top">
-      <TitleLv2 title="制作実績" />
+      <TitleLv2 title="制作事例" />
       <div class="l-section-body-top">
         <div class="top-works-list">
+          <a href="works/oita-campus-link" class="top-works-card">
+            <div class="top-works-card-thumbnail">
+              <img
+                src="/assets/images/works/pic-works-thumbnail-ocl@2x.webp"
+                alt="Oita Campus Link公式サイトのファーストビュー"
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="160"
+              />
+            </div>
+            <div class="top-works-card-content">
+              <div class="top-works-card-title">
+                <span class="top-works-card-category">#コーポレートサイト</span>
+                <h3 class="top-works-card-site-name">Oita Campus Link 様</h3>
+              </div>
+              <ul class="top-works-card-list">
+                <li class="top-works-card-item">信頼形成</li>
+                <li class="top-works-card-item">問い合わせ導線</li>
+                <li class="top-works-card-item">自走運用</li>
+              </ul>
+            </div>
+          </a>
+
           <a href="/works/alohilani" class="top-works-card">
             <div class="top-works-card-thumbnail">
               <img
@@ -189,9 +213,5 @@ import TitleLv2 from "../common/TitleLv2.astro";
         }
       }
     }
-  }
-
-  .isDisabled {
-    pointer-events: none;
   }
 </style>
