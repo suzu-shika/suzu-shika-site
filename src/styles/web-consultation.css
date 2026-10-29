@@ -176,6 +176,7 @@ h1 {
   color:white;
   border-radius:8px;
   text-decoration:none;
+  transition:box-shadow .3s ease;
   font-weight:700;
   line-height:24px}
 
@@ -665,4 +666,9 @@ h1 {
   .value-list h3 {
     margin-bottom:8px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-button {
+    transition:none}
 }
