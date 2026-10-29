@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/LayoutWebConsultation.astro';
+import Booking from '../../components/web-consultation/Booking.astro';
+import copy from '../../data/web-consultation.json';
+import '../../styles/web-consultation.css';
+import '@fontsource/noto-sans-jp/400.css';
+import '@fontsource/noto-sans-jp/500.css';
+import '@fontsource/noto-sans-jp/700.css';
+import logo from '../../assets/web-consultation/logo.svg';
+import logoWhite from '../../assets/web-consultation/logo-white.svg';
+import hero from '../../assets/web-consultation/hero.svg';
+import paths from '../../assets/web-consultation/value-paths.svg';
+import priority from '../../assets/web-consultation/value-priority.svg';
+import choice from '../../assets/web-consultation/value-choice.svg';
+import biz from '../../assets/web-consultation/works-biz.png';
+import koyomi from '../../assets/web-consultation/works-koyomi.png';
+import mahana from '../../assets/web-consultation/works-mahana.png';
+import portrait from '../../assets/web-consultation/profile.png';
+const t = (id: string) => copy[id as keyof typeof copy];
+const issues = [1429,1430,1431].map(n=>({title:t(`I4438:${n};4438:1600`),body:t(`I4438:${n};4438:1601`)}));
+const values = [1440,1443,1446].map((n,i)=>({title:t(`I4438:${n};4438:1603`),body:t(`I4438:${n};4438:1604`),icon:[paths,priority,choice][i].src}));
+const works = [1479,1480,1481].map((n,i)=>({title:t(`I4438:${n};4404:1039`),body:t(`I4438:${n};4404:1040`),image:[biz,koyomi,mahana][i]}));
+const questions = [1500,1501,1502,1503,1504,1505].map(n=>({q:t(`I4438:${n};4438:1612`),a:t(`I4438:${n};4438:1613`)}));
+const steps = [1511,1512,1513].map(n=>({title:t(`I4438:${n};4438:1609`),body:t(`I4438:${n};4438:1610`)}));
+const pageTitle = 'Web集客30分無料相談｜所沢近隣の小規模事業者向け｜鈴鹿Web制作';
+const pageDescription = '所沢市と近隣地域の小規模事業者向け。Googleマップ・ホームページ・SNSなどの集客経路を30分の無料相談で一緒に整理し、次に取り組むことを考えます。オンラインで相談できます。';
+const ogTitle = 'Web集客、何から見直す？｜30分無料相談｜鈴鹿Web制作';
+const canonical = 'https://suzu-shika.com/web-consultation/';
+const ogImageUrl = 'https://suzu-shika.com/web-consultation-og-image.png';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://suzu-shika.com/#organization',
+      name: '鈴鹿Web制作',
+      url: 'https://suzu-shika.com/',
+      founder: { '@type': 'Person', name: '鈴木 孝浩' },
+    },
+    {
+      '@type': 'WebPage',
+      ...(canonical ? { '@id': canonical, url: canonical } : {}),
+      name: pageTitle,
+      description: pageDescription,
+      inLanguage: 'ja',
+      about: { '@id': 'https://suzu-shika.com/#organization' },
+      ...(ogImageUrl ? { primaryImageOfPage: ogImageUrl } : {}),
+    },
+  ],
+};
+const jsonLd = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+---
+<Layout title={pageTitle} description={pageDescription} ogTitle={ogTitle} canonical={canonical} ogImageUrl={ogImageUrl} jsonLd={jsonLd}>
+<a class="skip-link" href="#main">本文へ移動</a>
+<span class="visually-hidden" id="new-window">新しいタブで開きます</span>
+<header class="site-header">
+ <div class="container header-inner">
+  <a class="brand" href="https://suzu-shika.com/" target="_blank" rel="noopener noreferrer" aria-describedby="new-window"><img src={logo.src} width="223" height="30.0135" alt="鈴鹿Web制作" /></a>
+  <a class="header-booking js-booking-cta" href="https://web1.zohobookings.jp/8078000000092065" target="_blank" rel="noopener noreferrer" aria-describedby="new-window">無料相談を予約</a>
+ </div>
+</header>
+<main id="main" tabindex="-1">
+ <section class="hero" aria-labelledby="hero-heading">
+  <div class="container hero-inner">
+   <div class="hero-copy">
+    <p class="eyebrow">{t('4438:1389')}</p>
+    <h1 id="hero-heading">Web集客、<br />何から見直す？</h1>
+    <p class="hero-lead">{t('4438:1391')}</p>
+    <Booking details />
+   </div>
+   <img class="hero-art" src={hero.src} width="464" height="384" alt="" fetchpriority="high" />
+  </div>
+ </section>
+ <section class="section issues" aria-labelledby="issues-heading"><div class="container stack">
+  <h2 class="quiet" id="issues-heading">次の一手で<br class="mobile-break" />迷っていませんか？</h2>
+  <ul class="three-grid issue-list">{issues.map(item=><li><h3>{item.title}</h3><p>{item.body}</p></li>)}</ul>
+ </div></section>
+ <section class="section values dark" aria-labelledby="values-heading"><div class="container stack">
+  <h2 class="focus" id="values-heading">{t('4438:1435')}</h2><p class="value-lead">{t('4438:1436')}</p>
+  <ul class="three-grid value-list">{values.map((item,i)=><li>
+   <div class="value-icon"><img class={`icon-${i}`} src={item.icon} alt="" loading="lazy" /></div>
+   <h3>{item.title}</h3><p class="paragraphs">{item.body}</p>
+  </li>)}</ul>
+  <div class="center-booking"><Booking inverse /></div>
+ </div></section>
+ <section class="section flow" aria-labelledby="flow-heading"><div class="container stack">
+  <h2 id="flow-heading">ホームページだけでなく、<br />集客の流れ全体を考えます。</h2>
+  <div class="flow-diagram">
+   <p>{t('4438:1457').split('\n').map((line,i)=><>{i>0&&<br />}{line}</>)}</p><span class="flow-arrow" aria-hidden="true">→</span>
+   <p>{t('4438:1460').split('\n').map((line,i)=><>{i>0&&<br />}{line}</>)}</p><span class="flow-arrow" aria-hidden="true">→</span>
+   <p class="flow-goal">{t('4438:1463')}</p>
+  </div>
+  <p class="measure">{t('4438:1464')}</p>
+ </div></section>
+ <section class="section scope" aria-labelledby="scope-heading"><div class="container stack">
+  <h2 class="quiet" id="scope-heading">無料相談と<br class="mobile-break" />有料サービスの違い</h2>
+  <div class="scope-grid">{[1470,1471].map(n=><div class="scope-item"><h3>{t(`I4438:${n};4438:1606`)}</h3><p>{t(`I4438:${n};4438:1607`)}</p></div>)}</div>
+  <p class="paragraphs measure">{t('4438:1472')}</p>
+ </div></section>
+ <section class="section works" aria-labelledby="works-heading"><div class="container stack">
+  <h2 id="works-heading">{t('4438:1476')}</h2><p class="measure">{t('4438:1477')}</p>
+  <div class="three-grid works-grid">{works.map(item=><article class="work-card">
+   <Image src={item.image} alt={`${item.title}の公式サイト：パソコンとスマートフォンの表示`} width={600} height={320} widths={[300,600]} sizes="294px" format="webp" loading="lazy" />
+   <h3>{item.title}</h3><p class="paragraphs">{item.body}</p>
+  </article>)}</div>
+  <p class="works-note">{t('4438:1482')}</p>
+ </div></section>
+ <section class="section profile" aria-labelledby="profile-heading"><div class="container stack">
+  <h2 id="profile-heading">{t('4438:1486')}</h2>
+  <div class="profile-grid"><Image class="portrait" src={portrait} alt="相談を担当する鈴木孝浩" width={500} height={500} widths={[280,360,500]} sizes="(min-width: 1100px) 360px, 280px" format="webp" loading="lazy" />
+   <div class="profile-copy"><p class="eyebrow">{t('4438:1490')}</p><h3>{t('4438:1491')}</h3><p class="experience">{t('4438:1493')}</p><p class="bio">{t('4438:1494')}</p></div>
+  </div>
+ </div></section>
+ <section class="section faq" aria-labelledby="faq-heading"><div class="container stack">
+  <h2 class="quiet" id="faq-heading">{t('4438:1498')}</h2>
+  <div>{questions.map(item=><div class="faq-item"><h3>{item.q}</h3><p>{item.a}</p></div>)}</div>
+ </div></section>
+ <section class="section steps" aria-labelledby="steps-heading"><div class="container stack">
+  <h2 class="quiet" id="steps-heading">{t('4438:1509')}</h2>
+  <ol class="three-grid steps-list">{steps.map(item=><li><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol>
+ </div></section>
+ <section class="section final dark" aria-labelledby="final-heading"><div class="container stack">
+  <h2 class="focus" id="final-heading">Web集客、<br class="mobile-break" />次に取り組むことを<br />一緒に考えませんか？</h2>
+  <Booking inverse details />
+ </div></section>
+</main>
+<footer class="site-footer dark"><div class="container stack">
+ <div class="footer-row"><a class="footer-brand" href="https://suzu-shika.com/" target="_blank" rel="noopener noreferrer" aria-describedby="new-window"><img src={logoWhite.src} width="223" height="30.0135" alt="鈴鹿Web制作" /></a>
+ <a class="privacy" href="https://suzu-shika.com/privacy-policy/" target="_blank" rel="noopener noreferrer" aria-describedby="new-window">プライバシーポリシー</a></div>
+ <p>© Suzu-Shika Web Production</p>
+</div></footer>
+</Layout>

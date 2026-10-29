@@ -1,0 +1,13 @@
+---
+import whiteArrow from '../../assets/web-consultation/arrow-white.svg';
+import brandArrow from '../../assets/web-consultation/arrow-brand.svg';
+interface Props { inverse?: boolean; details?: boolean; }
+const { inverse = false, details = false } = Astro.props;
+---
+<div class:list={['booking', { inverse }]}>
+  {details && <p class="booking-details">オンライン無料相談</p>}
+  <a class="booking-button js-booking-cta" href="https://web1.zohobookings.jp/8078000000092065" target="_blank" rel="noopener noreferrer" aria-describedby="new-window">
+    <span>30分無料相談を予約する</span><img src={inverse ? brandArrow.src : whiteArrow.src} width="20" height="20" alt="" />
+  </a>
+  <p class="booking-note">予約サイト「Zoho Bookings」へ</p>
+</div>

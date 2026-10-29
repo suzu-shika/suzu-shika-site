@@ -1,0 +1,674 @@
+/* Figma LP v2: 390px / 1440px. Intermediate widths use content-driven reflow. */
+:root {
+  --brand:#1c4b4f;
+  --ink:#243638;
+  --muted:#526467;
+  --paper:#faf9f6;
+  --tint:#eaf1f0;
+  --line:#cddad9;
+  --content:1120px}
+
+
+* {
+  box-sizing:border-box}
+
+body {
+  margin:0;
+  color:var(--ink);
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:16px;
+  line-height:29px}
+
+h1,h2,h3,p,ul,ol {
+  margin:0}
+
+ul,ol {
+  padding:0;
+  list-style:none}
+
+h1,h2,h3 {
+  color:var(--brand);
+  font-weight:700}
+
+img {
+  display:block;
+  max-width:100%;
+  height:auto}
+
+a {
+  color:inherit;
+  text-underline-offset:.18em}
+
+a:focus-visible {
+  outline:3px solid currentColor;
+  outline-offset:5px;
+  box-shadow:0 0 0 3px white}
+
+a:hover {
+  text-decoration-thickness:2px}
+
+.booking-button:hover {
+  box-shadow:inset 0 0 0 2px currentColor}
+
+p,h1,h2,h3 {
+  overflow-wrap:anywhere}
+
+.container {
+  width:min(var(--content),calc(100% - 48px));
+  margin-inline:auto}
+
+.stack {
+  display:flex;
+  flex-direction:column;
+  gap:32px}
+
+.section {
+  padding-block:64px}
+
+h2 {
+  font-size:26px;
+  line-height:39px}
+
+h2.quiet {
+  font-size:24px;
+  line-height:36px}
+
+h2.focus {
+  font-size:30px;
+  line-height:45px}
+
+.dark {
+  background:var(--brand);
+  color:white}
+
+.dark h2,.dark h3 {
+  color:inherit}
+
+.paragraphs {
+  white-space:pre-line}
+
+.measure {
+  max-width:820px}
+
+.eyebrow {
+  font-size:14px;
+  line-height:22px;
+  font-weight:500;
+  color:var(--brand)}
+
+
+.site-header,.hero {
+  background:var(--paper)}
+
+.site-header {
+  padding-block:16px}
+
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px}
+
+.brand {
+  width:180px;
+  flex-shrink:1}
+
+.header-booking {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  width:142px;
+  flex-shrink:0;
+  padding:12px 8px;
+  font-size:13px;
+  line-height:20px;
+  font-weight:700;
+  color:var(--brand)}
+
+
+.hero {
+  padding-block:32px 48px}
+
+.hero-inner,.hero-copy {
+  display:flex;
+  flex-direction:column;
+  gap:24px}
+
+.hero-inner {
+  align-items:center}
+
+.hero-copy {
+  width:100%}
+
+h1 {
+  font-size:40px;
+  line-height:56px}
+
+.hero-art {
+  width:300px;
+  aspect-ratio:464/384}
+
+.booking {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:342px;
+  max-width:100%}
+
+.booking-details {
+  color:var(--brand);
+  font-size:14px;
+  line-height:22px;
+  font-weight:500;
+  text-align:center}
+
+.booking-button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height:60px;
+  width:100%;
+  padding:16px 24px;
+  background:var(--brand);
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  transition:box-shadow .3s ease;
+  font-weight:700;
+  line-height:24px}
+
+.booking-button span {
+  flex:1;
+  text-align:center}
+
+.booking-button img {
+  flex-shrink:0;
+  width:20px;
+  height:20px}
+
+.booking-note {
+  font-size:14px;
+  line-height:23px;
+  color:var(--muted);
+  text-align:center}
+
+.inverse .booking-button {
+  background:white;
+  color:var(--brand)}
+
+.inverse .booking-details,.inverse .booking-note {
+  color:white}
+
+.center-booking {
+  display:flex;
+  justify-content:center}
+
+
+.three-grid {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:24px}
+
+.issues {
+  padding-block:48px}
+
+.issue-list {
+  gap:28px}
+
+.issue-list li {
+  display:flex;
+  flex-direction:column;
+  gap:12px}
+
+.issue-list h3 {
+  font-size:18px;
+  line-height:28px}
+
+.value-list {
+  gap:40px}
+
+.value-list li {
+  display:flex;
+  flex-direction:column;
+  gap:20px}
+
+.value-list h3 {
+  font-size:22px;
+  line-height:34px}
+
+.value-icon {
+  width:48px;
+  height:48px;
+  position:relative;
+  margin-bottom:4px}
+
+.value-icon img {
+  position:absolute}
+
+.icon-0 {
+  left:3px;
+  top:4px}
+
+.icon-1 {
+  left:3px;
+  top:7px}
+
+.icon-2 {
+  left:5px;
+  top:3px}
+
+.value-lead {
+  max-width:720px}
+
+
+.flow-diagram {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  background:var(--paper);
+  padding:24px;
+  color:var(--brand)}
+
+.flow-diagram p {
+  padding:20px;
+  width:100%;
+  text-align:center}
+
+.flow-arrow {
+  font-size:20px;
+  line-height:30px;
+  font-weight:700;
+  transform:rotate(90deg)}
+
+.flow-diagram .flow-goal {
+  font-size:22px;
+  line-height:34px;
+  font-weight:700}
+
+
+.scope,.steps {
+  background:var(--paper);
+  padding-block:48px}
+
+.scope-grid {
+  display:grid;
+  gap:24px}
+
+.scope-item {
+  padding:24px;
+  background:var(--tint);
+  display:flex;
+  flex-direction:column;
+  gap:12px}
+
+.scope-item+ .scope-item {
+  background:white}
+
+.scope-item h3 {
+  font-size:24px;
+  line-height:36px}
+
+
+.work-card {
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:23px;
+  display:flex;
+  flex-direction:column;
+  gap:16px}
+
+.work-card img {
+  width:294px;
+  max-width:100%;
+  aspect-ratio:600/320;
+  object-fit:contain}
+
+.work-card h3 {
+  font-size:20px;
+  line-height:30px}
+
+.works-note {
+  max-width:880px;
+  color:var(--muted)}
+
+
+.profile {
+  background:var(--tint);
+  padding-block:56px}
+
+.profile .stack {
+  gap:40px}
+
+.profile-grid {
+  display:flex;
+  flex-direction:column;
+  gap:32px}
+
+.portrait {
+  width:280px;
+  aspect-ratio:1;
+  border-radius:12px}
+
+.profile-copy {
+  display:flex;
+  flex-direction:column;
+  gap:24px}
+
+.profile-copy h3 {
+  font-size:26px;
+  line-height:39px}
+
+.experience {
+  width:220px;
+  max-width:100%;
+  border-radius:8px;
+  padding:12px;
+  background:white;
+  font-weight:700;
+  line-height:24px;
+  color:var(--brand)}
+
+
+.faq {
+  padding-block:56px}
+
+.faq .container {
+  max-width:880px}
+
+.faq .stack {
+  gap:24px}
+
+.faq-item {
+  padding-block:24px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:12px}
+
+.faq-item h3 {
+  font-size:18px;
+  line-height:29px}
+
+
+.steps-list li {
+  border-top:2px solid var(--brand);
+  padding-block:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px}
+
+.steps-list h3 {
+  font-size:20px;
+  line-height:30px}
+
+
+.final {
+  padding-block:72px}
+
+.final .stack {
+  align-items:center;
+  text-align:center}
+
+.final h2 {
+  max-width:1000px}
+
+.site-footer {
+  padding-block:24px 40px;
+  font-size:14px;
+  line-height:23px}
+
+.footer-row {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:32px}
+
+.footer-brand {
+  width:200px}
+
+.privacy {
+  min-height:24px}
+
+
+.visually-hidden {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+  border:0}
+
+.skip-link {
+  position:absolute;
+  left:24px;
+  top:8px;
+  z-index:10;
+  padding:12px;
+  background:white;
+  color:var(--brand);
+  transform:translateY(-200%)}
+
+.skip-link:focus {
+  transform:none}
+
+
+@media(min-width:700px) {
+  .container {
+  width:min(var(--content),calc(100% - 96px))}
+
+  .scope-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+
+.hero-copy {
+  max-width:592px}
+
+.profile-grid {
+  flex-direction:row;
+  gap:40px}
+
+.profile-copy {
+  flex:1;
+  min-width:0}
+
+.portrait {
+  align-self:flex-start}
+
+.footer-row {
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center}
+
+}
+
+
+@media(min-width:1100px) {
+ .container {
+  width:min(var(--content),calc(100% - 48px))}
+
+ .mobile-break {
+  display:none}
+
+.section {
+  padding-block:104px}
+
+.stack {
+  gap:32px}
+
+h2 {
+  font-size:32px;
+  line-height:48px}
+
+h2.quiet {
+  font-size:28px;
+  line-height:42px}
+
+h2.focus {
+  font-size:44px;
+  line-height:64px}
+
+
+ .site-header {
+  padding-block:24px}
+
+.brand,.footer-brand {
+  width:223px}
+
+.header-booking {
+  width:176px}
+
+.hero {
+  padding-block:56px 88px}
+
+.hero-inner {
+  flex-direction:row;
+  gap:64px}
+
+.hero-copy {
+  width:calc((100% - 64px)*.560606);
+  flex-shrink:0}
+
+.hero-art {
+  width:calc((100% - 64px)*.439394)}
+
+h1 {
+  font-size:64px;
+  line-height:86px}
+
+.hero-lead {
+  max-width:544px;
+  font-size:18px;
+  line-height:32px}
+
+
+ .three-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.issues {
+  padding-block:64px}
+
+.issues .stack,.values .stack,.flow .stack {
+  gap:40px}
+
+.issue-list,.value-list {
+  gap:48px}
+
+.flow-diagram {
+  flex-direction:row;
+  gap:20px;
+  padding:32px}
+
+.flow-diagram p {
+  flex:1;
+  min-width:0;
+  padding:24px}
+
+.flow-arrow {
+  width:24px;
+  flex-shrink:0;
+  transform:none}
+
+
+ .scope {
+  padding-block:72px}
+
+.work-card {
+  min-height:500.8px;
+  padding:35px}
+
+.profile {
+  padding-block:80px}
+
+.profile-grid {
+  gap:64px;
+  max-width:1064px}
+
+.portrait {
+  width:360px}
+
+.profile-copy {
+  width:640px}
+
+.profile-copy h3 {
+  font-size:36px;
+  line-height:52px}
+
+.experience {
+  width:240px}
+
+.bio {
+  max-width:620px}
+
+
+ .faq {
+  padding-block:80px}
+
+.faq .stack {
+  gap:32px}
+
+.steps {
+  padding-block:64px}
+
+.final {
+  padding-block:112px}
+
+.site-footer {
+  padding-block:32px 48px}
+
+
+}
+
+
+@media(max-width:359px) {
+  h1 {
+  font-size:34px;
+  line-height:48px}
+
+.container {
+  width:calc(100% - 32px)}
+
+.header-inner {
+  gap:4px}
+
+.header-booking {
+  width:126px}
+
+.booking-button {
+  padding-inline:16px}
+
+.flow-diagram {
+  padding:16px}
+
+.flow-diagram p {
+  padding:16px}
+
+}
+
+@media(max-width:699px) {
+  .value-list {
+    gap:48px;
+  }
+
+  .value-list li {
+    gap:0;
+  }
+
+  .value-icon {
+    margin-bottom:12px;
+  }
+
+  .value-list h3 {
+    margin-bottom:8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-button {
+    transition:none}
+}

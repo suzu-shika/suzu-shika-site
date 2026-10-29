@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.2.1"
+    "astro": "^6.2.1",
+    "@fontsource/noto-sans-jp": "5.3.1"
   },
   "devDependencies": {
     "sass-embedded": "^1.99.0"
