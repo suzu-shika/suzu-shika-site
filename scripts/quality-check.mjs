@@ -1,0 +1,10 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {parse} from 'parse5';import {siteUrl,validateWork} from '../src/lib/work-validation.mjs';import {richHtml} from '../src/lib/rich-html.mjs';
+const data=JSON.parse(fs.readFileSync('../入稿準備/既存4件_保存後APIレスポンス.json'));
+for(const value of [undefined,'','   '])assert.equal(siteUrl(value),undefined);
+assert.equal(siteUrl('https://example.com/'),'https://example.com/');for(const v of ['javascript:alert(1)','invalid','https://u:p@example.com'])assert.throws(()=>siteUrl(v));
+for(const h of ['<ul><li>x</li></ul>','<ul><li><p>x</p><p><strong>y</strong><em>z</em></p></li></ul>','<p><a href="https://example.com">x</a></p>'])assert(richHtml(h));
+for(const h of ['<script>x</script>','<img src=x>','<table><tr><td>x</td></tr></table>'])assert.throws(()=>richHtml(h));assert.throws(()=>richHtml('<a href="https://example.com">x</a>','card'));assert(!richHtml('<p onclick="x">x<a href="javascript:alert(1)">y</a></p>').includes('javascript'));
+for(const d of Object.values(data)){validateWork(d);assert.throws(()=>validateWork({...d,title:''}));assert.throws(()=>validateWork({...d,cardPoints:'<p></p>'}));}
+console.log('input and HTML assertions passed');
+function text(n){return n.nodeName==='#text'?n.value:(n.childNodes||[]).map(text).join(' ');}function find(n,p,out=[]){if(p(n))out.push(n);for(const c of n.childNodes||[])find(c,p,out);return out;}function cls(n,c){return n.attrs?.some(a=>a.name==='class'&&a.value.split(' ').includes(c));}
+for(const id of Object.keys(data)){const old=parse(fs.readFileSync('../入稿準備/baseline-2026-11-01/works/'+id+'/index.html','utf8'));const now=parse(fs.readFileSync('../入稿準備/a-baseline/works/'+id+'/index.html','utf8'));for(const c of ['works-kv','works-overview','works-problem','works-basic-design','works-production','works-reaction','works-voice','works-target']){const a=find(old,n=>cls(n,c))[0],b=find(now,n=>cls(n,c))[0];if(a&&b&&text(a).replace(/\s/g,'')!==text(b).replace(/\s/g,''))assert.fail('CONTENT DIFFERENCE '+id+' '+c);}}

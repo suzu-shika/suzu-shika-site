@@ -1,0 +1,102 @@
+{
+  "alohilani": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://suzu-shika.com/works/alohilani#webpage",
+    "url": "https://suzu-shika.com/works/alohilani",
+    "name": "Ka Pā Hula O Alohilani（アロヒラニ）｜制作実績｜鈴鹿Web制作",
+    "description": "Ka Pā Hula O Alohilani（アロヒラニ）のホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "about": {
+      "@type": "CreativeWork",
+      "name": "Ka Pā Hula O Alohilani（アロヒラニ） ホームページ",
+      "url": "https://alohilani-hula.com/"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "image": "https://suzu-shika.com/ogp.png"
+  },
+  "koyomi-yoga-pilates": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://suzu-shika.com/works/koyomi-yoga-pilates#webpage",
+    "url": "https://suzu-shika.com/works/koyomi-yoga-pilates",
+    "name": "koyomi yoga pilates｜制作実績｜鈴鹿Web制作",
+    "description": "koyomi yoga pilatesのホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "about": {
+      "@type": "CreativeWork",
+      "name": "koyomi yoga pilates ホームページ",
+      "url": "https://koyomi-yoga.com/"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "image": "https://suzu-shika.com/ogp.png"
+  },
+  "mahana": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://suzu-shika.com/works/mahana#webpage",
+    "url": "https://suzu-shika.com/works/mahana",
+    "name": "mahana｜制作実績｜鈴鹿Web制作",
+    "description": "mahanaのホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "about": {
+      "@type": "CreativeWork",
+      "name": "mahana ホームページ",
+      "url": "https://mahana-organic.com/"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "image": "https://suzu-shika.com/ogp.png"
+  },
+  "oita-campus-link": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://suzu-shika.com/works/oita-campus-link#webpage",
+    "url": "https://suzu-shika.com/works/oita-campus-link",
+    "name": "Oita Campus Link｜制作実績｜鈴鹿Web制作",
+    "description": "Oita Campus Linkのホームページ制作事例。課題整理から情報設計・導線設計・運用設計まで一貫して対応し、成果につながるサイト構築を行いました。",
+    "inLanguage": "ja",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "about": {
+      "@type": "CreativeWork",
+      "name": "Oita Campus Link ホームページ",
+      "url": "https://oitacampuslink.com/"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "鈴鹿Web制作",
+      "url": "https://suzu-shika.com/"
+    },
+    "image": "https://suzu-shika.com/ogp.png"
+  }
+}
