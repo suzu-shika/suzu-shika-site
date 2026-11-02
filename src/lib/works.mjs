@@ -11,5 +11,5 @@ export async function getWorks(){
   if(!Number.isInteger(count)||count<1||count>100)throw Error('Invalid fixture count');
   return Array.from({length:count},(_,i)=>({...originals[i%originals.length],id:i<originals.length?originals[i].id:'fixture-'+(i+1),displayOrder:i+1,featured:i<Number(process.env.WORKS_FEATURED_COUNT??2)})).map(validateWork);
  }
- return requirePublishedWorks(await fetchPublishedWorks(import.meta.env)).map(validateWork);
+ return requirePublishedWorks(await fetchPublishedWorks({MICROCMS_SERVICE_DOMAIN:import.meta.env.MICROCMS_SERVICE_DOMAIN,MICROCMS_API_KEY:import.meta.env.MICROCMS_API_KEY})).map(validateWork);
 }
