@@ -2,7 +2,7 @@
 import {richHtml} from '../../lib/rich-html.mjs';
 const {works}=Astro.props;
 ---
-<div class="top-works-list">{works.map(work => <a href={'/works/'+work.id} class="top-works-card"><div class="top-works-card-thumbnail"><img src={work.thumbnail.url} alt={work.thumbnailAlt} width="300" height="160" loading="lazy" decoding="async" /></div><div class="top-works-card-content"><div class="top-works-card-title"><span class="top-works-card-category">#{work.category}</span><h3 class="top-works-card-site-name">{work.title} 様</h3></div><div set:html={richHtml(work.cardPoints,'card')} /></div></a>)}</div>
+<div class="top-works-list">{works.map(work => <a href={'/works/'+work.id} class="top-works-card"><div class="top-works-card-thumbnail"><img src={work.thumbnail.url} alt={work.thumbnailAlt} width="300" height="160" loading="lazy" decoding="async" /></div><div class="top-works-card-content"><div class="top-works-card-title"><span class="top-works-card-category">#{work.siteType}</span><h3 class="top-works-card-site-name">{work.title} 様</h3></div><div set:html={richHtml(work.cardPoints,'card')} /></div></a>)}</div>
 <style lang="scss" is:global>
   @use "../../styles/breakpoints" as *;
 
