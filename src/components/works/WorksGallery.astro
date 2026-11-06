@@ -1,24 +1,25 @@
 ---
 const {work}=Astro.props;
 import {richHtml} from "../../lib/rich-html.mjs";
+import {workImageUrl} from "../../lib/work-image.mjs";
 ---
 <div class="works-gallery">
   <div class="l-container">
     {(work.pcImage1||work.pcImage2||work.spImage1||work.spImage2)&&<div class="works-gallery-content">
       {(work.pcImage1||work.pcImage2)&&<ul class="works-gallery-pc-list">
         {work.pcImage1&&<li class="works-gallery-pc-item">
-          {work.pcImage1&&<img src={work.pcImage1.url} alt={work.pcImage1Alt} loading="lazy" decoding="async" width="300" height="182">}
+          {work.pcImage1&&<img src={workImageUrl(work.pcImage1,600)} alt={work.pcImage1Alt} loading="lazy" decoding="async" width="300" height="182">}
         </li>}
         {work.pcImage2&&<li class="works-gallery-pc-item">
-          {work.pcImage2&&<img src={work.pcImage2.url} alt={work.pcImage2Alt} loading="lazy" decoding="async" width="300" height="182">}
+          {work.pcImage2&&<img src={workImageUrl(work.pcImage2,600)} alt={work.pcImage2Alt} loading="lazy" decoding="async" width="300" height="182">}
         </li>}
       </ul>}
       {(work.spImage1||work.spImage2)&&<ul class="works-gallery-sp-list">
         {work.spImage1&&<li class="works-gallery-sp-item">
-          {work.spImage1&&<img src={work.spImage1.url} alt={work.spImage1Alt} loading="lazy" decoding="async" width="90" height="180">}
+          {work.spImage1&&<img src={workImageUrl(work.spImage1,180)} alt={work.spImage1Alt} loading="lazy" decoding="async" width="90" height="180">}
         </li>}
         {work.spImage2&&<li class="works-gallery-sp-item">
-          {work.spImage2&&<img src={work.spImage2.url} alt={work.spImage2Alt} loading="lazy" decoding="async" width="90" height="180">}
+          {work.spImage2&&<img src={workImageUrl(work.spImage2,180)} alt={work.spImage2Alt} loading="lazy" decoding="async" width="90" height="180">}
         </li>}
       </ul>}
     </div>}

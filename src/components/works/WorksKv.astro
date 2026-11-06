@@ -1,6 +1,7 @@
 ---
 const {work}=Astro.props;
 import {richHtml} from "../../lib/rich-html.mjs";
+import {workImageUrl} from "../../lib/work-image.mjs";
 ---
 <section class="works-kv">
   <div class="l-container">
@@ -14,7 +15,7 @@ import {richHtml} from "../../lib/rich-html.mjs";
       </div>
       <div class="works-kv-thumbnail">
         <img
-          src={work.thumbnail.url}
+          src={workImageUrl(work.thumbnail,640)}
           alt={work.thumbnailAlt}
           loading="eager"
           decoding="async"
