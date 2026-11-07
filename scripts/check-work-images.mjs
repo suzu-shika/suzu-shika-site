@@ -5,7 +5,7 @@ import sharp from 'sharp';
 import {workImageUrl} from '../src/lib/work-image.mjs';
 
 const out = process.env.WORKS_CHECK_OUTPUT || '../入稿準備/2026-11-06_PNG最適化プレビュー';
-const fixture = JSON.parse(await fs.readFile('../入稿準備/2026-11-06_公開前再取得5件.json','utf8'));
+const fixture = JSON.parse(await fs.readFile(process.env.WORKS_CHECK_DATA || '../入稿準備/2026-11-06_公開前再取得5件.json','utf8'));
 const work = fixture['tokorozawa-biz-community'];
 assert(work && !work.testimonialQuotes);
 const plain = {url:'https://images.microcms-assets.io/assets/test.png',width:600};

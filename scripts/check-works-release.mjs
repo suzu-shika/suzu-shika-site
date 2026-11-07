@@ -6,7 +6,7 @@ import {validateWork} from '../src/lib/work-validation.mjs';
 import {workImageUrl} from '../src/lib/work-image.mjs';
 
 const out=process.env.WORKS_CHECK_OUTPUT || '../入稿準備/2026-11-06_公開前検証';
-const raw=JSON.parse(await fs.readFile('../入稿準備/2026-11-06_公開前再取得5件.json','utf8'));
+const raw=JSON.parse(await fs.readFile(process.env.WORKS_CHECK_DATA || '../入稿準備/2026-11-06_公開前再取得5件.json','utf8'));
 // Apply the production ID/order checks to the original records, before fixture synthesis.
 const works=await fetchPublishedWorks({MICROCMS_SERVICE_DOMAIN:'suzu-shika-site-astro',MICROCMS_API_KEY:'local-validation'},async()=>({ok:true,json:async()=>({contents:Object.values(raw),offset:0,totalCount:5})}));
 assert.deepEqual(works.map(w=>w.id),['koyomi-yoga-pilates','oita-campus-link','tokorozawa-biz-community','alohilani','mahana']);
@@ -84,6 +84,6 @@ if(process.env.WORKS_CHECK_URL){
     assert.equal(res.status,200,path);const header=res.headers.get('x-robots-tag');assert(!header||!/(?:^|[\s,:])(noindex|none)(?:$|[\s,])/i.test(header),path+' X-Robots-Tag');
     http.push({path,status:res.status,xRobotsTag:header});await res.arrayBuffer();
   }
-  await fs.writeFile('../入稿準備/2026-11-07_ローカルHTTP検査.json',JSON.stringify(http,null,2)+'\n');
+  await fs.writeFile(process.env.WORKS_HTTP_RESULT || '../入稿準備/2026-11-07_ローカルHTTP検査.json',JSON.stringify(http,null,2)+'\n');
 }
 console.log(JSON.stringify({result:'PASS',rawRecords:5,productionCandidateNoindex:false,details:results,unchangedPages:4},null,2));
