@@ -8,8 +8,10 @@ const {page}=Astro.props;
 const url=(n) => n===1?'/works/':`/works/${n}/`;
 const numbers=Array.from({length:page.lastPage},(_,i)=>i+1);
 const title=`制作事例一覧${page.currentPage>1?'｜'+page.currentPage+'ページ目':''}｜鈴鹿Web制作`;
+const canonical=new URL(url(page.currentPage),Astro.site).href;
+const jsonLd=JSON.stringify({'@context':'https://schema.org','@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:title});
 ---
-<Layout title={title} description={title} canonical={new URL(url(page.currentPage),Astro.site).href}>
+<Layout title={title} description={title} canonical={canonical} jsonLd={jsonLd}>
 <main class="l-container"><h1>制作事例一覧</h1><WorkCards works={page.data}/>
 {page.lastPage>1&&<nav aria-label="制作事例のページ切り替え">{page.currentPage>1&&<a href={url(page.currentPage-1)}>前へ</a>}{numbers.map((n) => (<a href={url(n)} aria-current={page.currentPage===n?'page':undefined}>{n}</a>))}{page.currentPage < page.lastPage&&<a href={url(page.currentPage+1)}>次へ</a>}</nav>}
 <Breadcrumb siteUrl="https://suzu-shika.com" breadcrumbLists={[{name:"制作事例一覧",path:"/works/"},...(page.currentPage>1?[{name:page.currentPage+"ページ目",path:url(page.currentPage)}]:[])]}/></main>
