@@ -13,6 +13,7 @@ const {
   ogDescription = description,
   ogImage = "https://suzu-shika.com/ogp.png",
   noIndex = false,
+  canonical = `https://suzu-shika.com${Astro.url.pathname}`,
   jsonLd = [],
 } = Astro.props;
 
@@ -38,6 +39,7 @@ const jsonLdList = Array.isArray(jsonLd)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
+    <link rel="canonical" href={canonical} />
     <meta name="description" content={description}>
 
     { noIndex && <meta name="robots" content="noindex, nofollow" /> }
@@ -49,7 +51,7 @@ const jsonLdList = Array.isArray(jsonLd)
 
     <!-- ogp -->
     <meta property="og:site_name" content="鈴鹿Web制作">
-    <meta property="og:url" content={`https://suzu-shika.com${Astro.url.pathname}`} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType}>
     <meta property="og:title" content={ogTitle}>
     <meta property="og:description" content={ogDescription}>

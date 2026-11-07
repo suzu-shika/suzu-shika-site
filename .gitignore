@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# All local environment variants; only the empty template is versioned.
+.env.*
+!.env.example

@@ -1,0 +1,22 @@
+---
+import legacySeo from '../../lib/legacy-work-seo.json';
+import Layout from '../../layouts/Layout.astro';
+import {getWorks} from '../../lib/works.mjs';
+import WorksKv from '../../components/works/WorksKv.astro';
+import WorksOverview from '../../components/works/WorksOverview.astro';
+import WorksProblem from '../../components/works/WorksProblem.astro';
+import WorksBasicDesign from '../../components/works/WorksBasicDesign.astro';
+import WorksProduction from '../../components/works/WorksProduction.astro';
+import WorksReaction from '../../components/works/WorksReaction.astro';
+import WorksVoice from '../../components/works/WorksVoice.astro';
+import WorksTarget from '../../components/works/WorksTarget.astro';
+import WorksGallery from '../../components/works/WorksGallery.astro';
+import Breadcrumb from '../../components/common/Breadcrumb.astro';
+import Cta from '../../components/common/Cta.astro';
+export async function getStaticPaths(){return (await getWorks()).map(work=>({params:{slug:work.id},props:{work}}));}
+const {work}=Astro.props;
+const jsonLd=structuredClone(legacySeo[work.id]||legacySeo['koyomi-yoga-pilates']);
+jsonLd['@id']='https://suzu-shika.com/works/'+work.id+'#webpage';jsonLd.url='https://suzu-shika.com/works/'+work.id;jsonLd.name=legacySeo[work.id]?.name||work.title+'｜制作実績｜鈴鹿Web制作';jsonLd.description=work.seoDescription;jsonLd.about={...jsonLd.about,name:legacySeo[work.id]?.about?.name||work.title+' ホームページ',...(work.siteUrl?{url:work.siteUrl}:{})};if(!work.siteUrl)delete jsonLd.about.url;
+---
+<Layout jsonLd={JSON.stringify(jsonLd)} title={work.seoTitle} description={work.seoDescription} ogType="article" canonical={'https://suzu-shika.com/works/'+work.id}>
+<main class="works"><WorksKv work={work}/><WorksOverview work={work}/>{work.problems&&<WorksProblem work={work}/>}{(work.informationDesign||work.navigationDesign||work.operationDesign)&&<WorksBasicDesign work={work}/>}{work.productionNotes&&<WorksProduction work={work}/>}{work.reactions&&<WorksReaction work={work}/>}{work.testimonialQuotes&&<WorksVoice work={work}/>}{work.recommendedFor&&<WorksTarget work={work}/>}<WorksGallery work={work}/><Breadcrumb siteUrl="https://suzu-shika.com" breadcrumbLists={[{name:'制作事例一覧',path:'/works/'},{name:work.title,path:'/works/'+work.id}]}/></main><Cta/></Layout>

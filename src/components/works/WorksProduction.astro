@@ -1,0 +1,21 @@
+---
+import TitleLv2 from "../common/TitleLv2.astro";
+const {work}=Astro.props;
+import {richHtml} from "../../lib/rich-html.mjs";
+---
+
+<section class="works-production">
+  <div class="l-container">
+    <div class="l-section">
+      <TitleLv2 title="デザイン・実装の留意点"/>
+      <div class="l-section-body">
+        <div set:html={richHtml(work.productionNotes,'green')} />
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss" is:global>
+  @use '../../styles/breakpoints' as *;
+
+</style>
